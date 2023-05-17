@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('home', [
+        "Email" => "emilus@gmail.com",
         "Name" => "Ali An Nuur",
         "Nim" => "F1D021001"
     ]);

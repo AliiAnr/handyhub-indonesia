@@ -10,6 +10,5 @@
    <h1>YEEEY</h1>
    <p> <?php echo $Name; ?></p>
    <p> <?php echo $Email; ?></p>
-   <img src="<?php echo $image ?>" alt="<?php $name ?>">
 </body>
 </html>
