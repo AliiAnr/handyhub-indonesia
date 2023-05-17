@@ -19,8 +19,11 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('home', [
-        "Email" => "emilus@gmail.com",
+        "Email" => "sdasdad",
         "Name" => "Ali An Nuur",
         "Nim" => "F1D021001"
     ]);
+});
+Route::get('/abot', function () {
+    return view('abouy');
 });
