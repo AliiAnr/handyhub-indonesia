@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('home', [
+        "Email" => "sdasdad",
         "Name" => "Ali An Nuur",
         "Nim" => "F1D021001"
     ]);
@@ -26,4 +27,8 @@ Route::get('/home', function () {
 
 Route::get('/layout', function () {
     return view('layout');
+  });
+  
+Route::get('/abot', function () {
+    return view('abouy');
 });
