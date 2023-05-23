@@ -33,6 +33,6 @@ Route::get('/abot', function () {
     return view('abouy');
 });
 
-Route::get('/abot', function () {
-    return view('abouy');
+Route::get('/layout', function () {
+    return view('layout');
 });
