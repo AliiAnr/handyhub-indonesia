@@ -23,3 +23,7 @@ Route::get('/home', function () {
         "Nim" => "F1D021001"
     ]);
 });
+
+Route::get('/layout', function () {
+    return view('layout');
+});

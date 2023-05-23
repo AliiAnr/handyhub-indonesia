@@ -1,0 +1,884 @@
+html, * {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scroll-padding: 10rem;
+}
+
+/* NAVIGATION-START */
+.pic-logo-handyhub {
+    display: flex;
+}
+
+.text-logo {
+    display: block;
+}
+
+.container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-navigation {
+    width: 100%;
+    margin: 0 auto;
+    z-index: 9;
+    position: fixed;
+    padding: 24px 100px;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: rgb(249, 249, 249);
+}
+
+.log-sign-up {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 280px;
+}
+
+.btn-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ul-nav {
+    display: flex;
+    list-style: none;
+}
+
+.ul-nav .li-nav {
+    padding: 10px 15px;
+    margin: 0 10px;
+    position: relative;
+}
+
+.ul-nav .li-nav::before,
+.ul-nav .li-nav::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #292f36;
+    transition: 0.3s all ease-in-out;
+}
+
+.ul-nav .li-nav::before {
+    top: 0;
+    left: 0;
+}
+
+.ul-nav .li-nav::after {
+    bottom: 0;
+    right: 0;
+}
+
+.ul-nav .li-nav:hover:before {
+    right: 0;
+    left: auto;
+    width: 100%;
+}
+
+.ul-nav .li-nav:hover:after {
+    right: auto;
+    left: 0;
+    width: 100%;
+}
+
+.ul-nav .li-nav .a-nav {
+    text-decoration: none;
+    cursor: pointer;
+    color: #292f36;
+    font-size: 20px;
+    font-family: "Wix Madefor Display", sans-serif;
+}
+
+/* NAVIGATION-ENDS */
+
+/* BUTTON-SIGN/LOG-IN-START */
+
+.btn {
+    position: relative;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50px;
+    background-color: #292f36;
+    width: 93px;
+    height: 45px;
+    transition: all 0.3s ease;
+}
+
+.btn span {
+    position: relative;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #fbfbfb;
+    cursor: pointer;
+}
+
+.btn svg {
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+    stroke: #cda274;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+}
+
+.btn:hover::before {
+    width: 100%;
+    background: linear-gradient(126.79deg, #292f36 45.3%, #292f36 125.09%);
+    box-shadow: -10px 10px 20px rgba(193, 193, 193, 0.3);
+}
+
+.btn:hover svg {
+    transform: translateX(0);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* BUTTON-SIGN/LOG-IN-ENDS */
+
+/* CONTAINER-CONTENT-START */
+.container-content {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 70px;
+}
+
+.container-image-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 1080px;
+    border-radius: 0px 0px 0px 291px;
+    background-image: url("/assets/img/hero-image.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.inside-content {
+    width: 1201px;
+    margin: 0 auto;
+}
+
+.text-container-1 {
+    width: 567px;
+    height: 212px;
+    font-family: "DM Serif Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 85px;
+    line-height: 95px;
+    display: flex;
+    align-items: center;
+    color: #292f36;
+}
+
+.text-container-2 {
+    width: 400px;
+    font-family: "Wix Madefor Display", sans-serif;
+    line-height: 27px;
+    color: #4d5053;
+    font-size: 20px;
+}
+
+.btn-content-started {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 26px 49px 26px 48px;
+    gap: 10px;
+    border-radius: 18px;
+    font-size: 20px;
+    font-family: "Wix Madefor Display", sans-serif;
+    background-color: #292f36;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+/* CONTAINER-CONTENT-ENDS */
+
+/* CONTAINER-CONTENT-TWO-START */
+
+.container-content-two {
+    width: 1201px;
+    margin-top: 180px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.container-item-caption {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-container {
+    font-family: "DM Serif Display";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 46px;
+    line-height: 54px;
+    color: #292f36;
+}
+
+.item-caption {
+    margin-top: 10px;
+    background: #cda274;
+    width: 163.5px;
+    height: 12px;
+    border-radius: 0px 10px 10px 0px;
+    box-sizing: content-box;
+    position: relative;
+    margin-bottom: 40px;
+    left: 90px;
+}
+
+.item-caption::before {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-color: white transparent;
+    border-width: 12px 15px 0 0;
+}
+
+.service-item {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.service-list {
+    padding: 50px;
+    height: 220px;
+    width: 200px;
+}
+
+.service-list .title {
+    font-family: "DM Serif Display";
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.service-list .content {
+    text-align: center;
+    font-family: "Wix Madefor Display", sans-serif;
+    line-height: 150%;
+    color: #4d5053;
+}
+
+.service-list:hover {
+    background: #eeddca;
+    border-radius: 24px;
+    z-index: 0;
+}
+
+/* CONTAINER-CONTENT-TWO-ENDS */
+
+/* CONTAINER-CONTENT-THREE-START */
+
+.container-content-three {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin-top: 120px;
+}
+
+.container-content-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    width: 43%;
+}
+
+.text-content-first {
+    font-family: "DM Serif Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 125%;
+    letter-spacing: 0.02em;
+}
+
+.text-content-second {
+    font-family: "Wix Madefor Display", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 170%;
+}
+
+.text-content-third {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-text .number {
+    font-family: "Jost";
+    font-weight: 1000;
+    font-size: 22px;
+    font-style: normal;
+}
+
+.icon-text .text-number {
+    font-family: "Wix Madefor Display", sans-serif;
+    font-style: normal;
+    font-size: 20px;
+}
+
+.icon-text {
+    padding-left: 10px;
+    color: #4d5053;
+}
+/* CONTAINER-CONTENT-THREE-ENDS */
+
+/* CONTAINER-CONTENT-FOUR-START */
+
+.container-content-four {
+    width: 100%;
+    height: 620px;
+    background-color: #f4f0ec;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 68px 5px;
+    border-radius: 70px;
+    margin-top: 230px;
+}
+
+.text-content-two {
+    font-family: "DM Serif Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 125%;
+    letter-spacing: 0.02em;
+    width: 600px;
+    text-align: center;
+}
+
+.testimonial-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 50px;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+.testimonial-list-item {
+    width: 370px;
+    height: 339px;
+    background: #ffffff;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 50px;
+}
+
+.testimonial-container {
+    display: flex;
+    margin-top: 10px;
+}
+
+.description-item {
+    text-align: start;
+    font-family: "Wix Madefor Display", sans-serif;
+    font-style: normal;
+    font-size: 17px;
+    margin-top: 10px;
+    color: #4d5053;
+}
+
+.image-text-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.image-text-item .image-name {
+    font-family: "DM Serif Display";
+    font-style: normal;
+    font-weight: 400;
+}
+
+.image-text-item .image-address {
+    font-family: "Wix Madefor Display", sans-serif;
+    font-style: normal;
+    font-size: 12px;
+}
+
+.image-item .testimonial-image {
+    box-shadow: 4px 2px 9px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+}
+
+/* CONTAINER-CONTENT-FOUR-ENDS */
+
+/* CONTAINER-CONTENT-FIVE-START */
+
+.container-content-five {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 170px;
+}
+
+.content-five-list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 90px;
+}
+
+.content-list-item {
+    margin-bottom: 43px;
+}
+
+.text-content-three {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-content-three .theme-content {
+    font-family: "DM Serif Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 125%;
+    letter-spacing: 0.02em;
+}
+
+.text-content-three .text-theme {
+    width: 650px;
+    text-align: center;
+    font-family: "Wix Madefor Display", sans-serif;
+    font-style: normal;
+    font-size: 17px;
+    margin-top: 10px;
+    color: #4d5053;
+}
+
+.image-text-list {
+    margin-top: 17px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.image-text-list .note-img .note-theme {
+    font-family: "DM Serif Display";
+    font-style: normal;
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+.image-text-list .note-img .text-note {
+    font-family: "Wix Madefor Display", sans-serif;
+    font-style: normal;
+    font-size: 15px;
+    color: #4d5053;
+}
+
+.btn-content-five-item {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+/* CONTAINER-CONTENT-FIVE-ENDS */
+
+/* CONTAINER-INFORMATION-START */
+.container-information {
+    margin-top: 140px;
+    width: 100%;
+    height: 430px;
+    background-color: #f4f0ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.information-item {
+    display: flex;
+    padding: 50px;
+}
+
+.information-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.information-text .information-text-1 {
+    font-family: "DM Serif Display";
+    font-size: 70px;
+    color: #cda274;
+}
+
+.information-text .information-text-2 {
+    font-family: "Wix Madefor Display", sans-serif;
+    font-style: normal;
+    font-size: 15px;
+    color: #4d5053;
+}
+
+/* CONTAINER-INFORMATION-ENDS */
+
+/* CONTAINER-CONTENT-SIX-START */
+
+.container-content-next {
+    width: 1201px;
+    margin-top: 200px;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.container-content-six {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.content-six-item-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.content-six-item-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    gap: 20px;
+}
+
+.content-six-item-2 .content-list-item {
+    width: 340px;
+    height: 500px;
+    left: 409px;
+    border: 1px solid #e7e7e7;
+    border-radius: 62px;
+    gap: 10px;
+}
+
+.content-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px;
+}
+
+.content-six-item-2 .background-image-1 {
+    background-image: url("/assets/img/background-image-1.jpg");
+    width: 340px;
+    height: 289.27px;
+    border-radius: 45px 45px 0px 0px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.background-image-1 p {
+    font-family: "Wix Madefor Display", sans-serif;
+    font-style: normal;
+    background: #ffffff;
+    border-radius: 8px 8px 8px 0px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    padding: 10px;
+    color: #4d5053;
+}
+
+.content-six-item-2 .background-image-2 {
+    background-image: url("/assets/img/background-image-2.jpg");
+    width: 340px;
+    height: 289.27px;
+    border-radius: 45px 45px 0px 0px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.background-image-2 p {
+    font-family: "Wix Madefor Display", sans-serif;
+    font-style: normal;
+    background: #ffffff;
+    border-radius: 8px 8px 8px 0px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    padding: 10px;
+    color: #4d5053;
+}
+
+.content-six-item-2 .background-image-3 {
+    background-image: url("/assets/img/background-image-3.jpg");
+    width: 340px;
+    height: 289.27px;
+    border-radius: 45px 45px 0px 0px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.background-image-3 p {
+    font-family: "Wix Madefor Display", sans-serif;
+    font-style: normal;
+    background: #ffffff;
+    border-radius: 8px 8px 8px 0px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    padding: 10px;
+    color: #4d5053;
+}
+
+.text-background {
+    font-family: "DM Serif Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 125%;
+}
+
+.date-image {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.text-content-six-1 {
+    font-family: "DM Serif Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 125%;
+}
+
+.text-content-six-2 {
+    width: 811px;
+    height: 66px;
+    font-family: "Wix Madefor Display", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+}
+
+/* CONTAINER-CONTENT-SIX-ENDS */
+
+/* CONTAINER-JOIN-START */
+
+.container-join {
+    margin-top: 200px;
+    gap: 10px;
+    width: 100%;
+    height: 450px;
+    background-color: #292f36;
+    border-radius: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.join-text {
+    display: flex;
+    justify-content: center;
+}
+
+.join-text {
+    font-family: "DM Serif Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 125%;
+    text-align: center;
+    color: #ffffff;
+}
+
+.join-content {
+    font-family: "Wix Madefor Display", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+    color: #ffffff;
+}
+
+.btn-join-started {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 26px 49px 26px 48px;
+    gap: 10px;
+    border-radius: 18px;
+    font-size: 20px;
+    font-family: "Wix Madefor Display", sans-serif;
+    background-color: #cda274;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+/* CONTAINER-JOIN-ENDS */
+
+/* CONTAINER-FOOTER-START */
+
+.container-footer {
+    margin-top: 400px;
+    width: 100%;
+    height: 370px;
+    padding-top: 30px;
+    border-top: 1px solid #292f36;
+}
+
+.section-container {
+    width: 1201px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-logo {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.container-info {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.contact-button {
+    width: 186px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: #292F36;
+    border-radius: 12px;
+    font-family: "Wix Madefor Display", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.contact-button a{
+    text-decoration: none;
+    color: white;
+}
+
+.link-info {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.link {
+    font-family: "Wix Madefor Display", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 16px;
+    text-align: right;
+    align-self: center;
+    cursor: pointer;
+}
+
+.link a {
+    text-decoration: none;
+    color: #292f36;
+}
+
+.link-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 10px;
+    margin: 10px;
+    background: linear-gradient(135deg, #8b8a8a 0%, #41403e 100%);
+}
+
+.footer-left-side {
+    width: 300px;
+    font-family: "Wix Madefor Display", sans-serif;
+    font-size: 20px;
+    line-height: 16px;
+    text-align: left;
+    color: #292f36;
+}
+
+.footer-left-side .address-name {
+    margin-top: 25px;
+    font-family: "Wix Madefor Display", sans-serif;
+    line-height: 25px;
+}
+
+.footer-right-side{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+}
+
+strong {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+/* CONTAINER-FOOTER-ENDS */
