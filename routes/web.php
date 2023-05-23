@@ -32,3 +32,7 @@ Route::get('/layout', function () {
 Route::get('/abot', function () {
     return view('abouy');
 });
+
+Route::get('/abot', function () {
+    return view('abouy');
+});
