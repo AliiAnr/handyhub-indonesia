@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Pengguna;
+use App\Http\Controllers\penggunaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +34,4 @@ Route::get('/abot', function () {
     return view('abouy');
 });
 
-Route::get('/layout', function () {
-    return view('layout');
-});
+Route::get('/userlayout',[penggunaController::class,'onlyView']);
