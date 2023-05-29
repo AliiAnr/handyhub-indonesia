@@ -4,14 +4,32 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Document</title>
+   <title>HandHUB Home</title>
+   <link rel="icon" type="image/png" href="assets\img\start-renovation.png"/>
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Oswald:wght@200;400&family=Wix+Madefor+Display&display=swap" rel="stylesheet">
    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
    <body>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+      {{-- Alert-START--}}
+         @if(session()->has('yay'))
+         <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Selamat!</strong> {{session('yay')}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+         </div>
+         @endif
+         @if(session()->has('nay_login'))
+         <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Perhatian!</strong> {{session('nay_login')}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+         </div>
+         @endif
+      {{-- Alert-END--}}
       {{-- NAVIGATION-START--}}
       <nav class="btn-navigation">
          <div class="container-fluid">
@@ -32,6 +50,27 @@
                </ul>
             </div>
             <div class="log-sign-up">
+            @auth
+            <li class="nav-item dropdown">
+               
+               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               {{ auth()->user()->name }}
+               </a>
+               <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/profil">Profil</a></li>
+                  <li><a class="dropdown-item" href="#">Notifikasi</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li>
+                  <form action="/logout" method="post">
+                     @csrf
+                     <button type="submit" class="dropdown-item">
+                     <i class="bi bi-box-arrow-in-right"></i>
+                        Log Out
+                     </button>
+                  </form>  
+               </ul>
+            </li>
+            @else
                <div class="btn-login-sign">
                      <button class="btn" id="form-open">
                         <span>Sign in</span>
@@ -41,11 +80,11 @@
                         </svg>
                   </button>
                </div>
+            @endauth
             </div>
          </div>
       </nav>
       {{-- NAVIGATION-ENDS --}}
-      
       {{-- CONTENT-START --}}
 
       <div class="container-content">
@@ -61,7 +100,7 @@
                      There are many variations of the passages of lorem Ipsum fromavailable,variations of the passages.
                   </p>                
                </div>
-               <button class="btn-content-started" onclick="window.open('#', '_blank')">
+               <button class="btn-content-started" onclick="window.open('/user', '_blank')">
                   <span>Get Started</span>
                   <svg style="margin-top: 4px" width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M2 8.43542L15.7232 8.29857M10.6182 1.91138L17.1412 8.43436L10.4868 15.0887" stroke="#CDA274" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
@@ -350,14 +389,18 @@
          <i class="uil uil-times form_close"></i>
          <!-- Login From -->
          <div class="form login_form">
-            <form class="box-log-sign" action="#">
+            <form class="box-log-sign" action="/loginAuth" method="post">
+               @csrf
                <h2 class="form-title">Login</h2>
                <div class="input_box">
-               <input type="email" placeholder="Enter your email" required="required" />
+               <input type="email" placeholder="Enter your email" name="email" id="email"  class="@error('email') is-invalid @enderror"  required="required" />
                <i class="uil uil-envelope-alt email"></i>
                </div>
+               @error('email')
+                  <div class="invalid-feedback">Email Tidak Jelas</div>
+               @enderror
                <div class="input_box">
-               <input type="password" placeholder="Enter your password" required="required" />
+               <input type="password" placeholder="Enter your password" name="password" id="password" required="required" />
                <i class="uil uil-lock password"></i>
                <i class="uil uil-eye-slash pw_hide"></i>
                </div>
@@ -374,17 +417,28 @@
          </div>
          <!-- Signup From -->
          <div class="form signup_form">
-            <form class="box-log-sign" action="#">
+            <form class="box-log-sign" action="/registerUser" method="post">
+               @csrf
                <h2>SignUp</h2>
                <div class="input_box">
-               <input type="email" placeholder="Enter your email" required="required"/>
+               <input type="email" placeholder="Enter your email" class="@error('email') is-invalid @enderror" name="email" required="required"/>
                <i class="uil uil-envelope-alt email"></i>
                </div>
                <div class="input_box">
-               <input type="password" placeholder="Create password" required="required"/> />
+               <input placeholder="Enter your name" name="name" required="required"/>
+               <i class="uil uil-envelope-alt name"></i>
+               </div>
+               @error('email')
+                  <div class="invalid-feedback"> Email Sudah Digunakan </div>
+               @enderror
+               <div class="input_box">
+               <input type="password" placeholder="Create password" name="password" class="@error('password') is-invalid @enderror" required="required"/> />
                <i class="uil uil-lock password"></i>
                <i class="uil uil-eye-slash pw_hide"></i>
                </div>
+               @error('password')
+                  <div class="invalid-feedback">Password Minimal 6 character</div>
+               @enderror
                <div class="input_box">
                <input type="password" placeholder="Confirm password" required="required" />
                <i class="uil uil-lock password"></i>

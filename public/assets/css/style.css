@@ -4,7 +4,9 @@ html, * {
     scroll-behavior: smooth;
     scroll-padding: 10rem;
 }
-
+li {
+    list-style-type: none;
+}
 /* NAVIGATION-START */
 .pic-logo-handyhub {
     display: flex;
