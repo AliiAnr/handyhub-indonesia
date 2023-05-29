@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+html, * {
+   margin: 0;
+   padding: 0;
+   scroll-behavior: smooth;
+   scroll-padding: 10rem;
+}
+
+/* NAVIGATION-START */
+
+
+.pic-logo-handyhub {
+   display: flex;
+}
+
+.text-logo {
+   display: block;
+}
+
+.container-fluid {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.btn-navigation {
+   width: 100%;
+   margin: 0 auto;
+   z-index: 9999;
+   position: fixed;
+   padding: 24px 100px;
+   justify-content: space-between;
+   box-sizing: border-box;
+   background-color: rgb(249, 249, 249);; 
+}
+
+.log-sign-up {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 280px;
+}
+
+.btn-middle {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.ul-nav {
+   display: flex;
+   list-style: none;
+}
+
+.ul-nav .li-nav {
+   padding: 10px 15px;
+   margin: 0 10px;
+   position: relative;
+}
+
+.ul-nav .li-nav::before,
+.ul-nav .li-nav::after {
+   position: absolute;
+   content: "";
+   width: 0;
+   height: 2px;
+   background-color: #292f36;
+   transition: 0.3s all ease-in-out;
+}
+
+.ul-nav .li-nav::before {
+   top: 0;
+   left: 0;
+}
+
+.ul-nav .li-nav::after {
+   bottom: 0;
+   right: 0;
+}
+
+.ul-nav .li-nav:hover:before {
+   right: 0;
+   left: auto;
+   width: 100%;
+}
+
+.ul-nav .li-nav:hover:after {
+   right: auto;
+   left: 0;
+   width: 100%;
+}
+
+.ul-nav .li-nav .a-nav {
+   text-decoration: none;
+   cursor: pointer;
+   color: #292f36;
+   font-size: 20px;
+   font-family: "Wix Madefor Display", sans-serif;
+}
+
+/* NAVIGATION-ENDS */
+
+
+/* BUTTON-START */
+.btn {
+   position: relative;
+   padding: 12px 18px;
+   transition: all 0.2s ease;
+   border: none;
+   background: none;
+}
+
+.btn::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   border-radius: 50px;
+   background-color: #292f36;
+   width: 93px;
+   height: 45px;
+   transition: all 0.3s ease;
+}
+
+.btn span {
+   position: relative;
+   font-size: 18px;
+   font-weight: 700;
+   letter-spacing: 0.05em;
+   color: #fbfbfb;
+   cursor: pointer;
+}
+
+.btn svg {
+   margin-left: 10px;
+   fill: none;
+   stroke-linecap: round;
+   stroke-linejoin: round;
+   stroke-width: 2;
+   stroke: #cda274;
+   transform: translateX(-5px);
+   transition: all 0.3s ease;
+}
+
+.btn:hover::before {
+   width: 100%;
+   background: linear-gradient(126.79deg, #292f36 45.3%, #292f36 125.09%);
+   box-shadow: -10px 10px 20px rgba(193, 193, 193, 0.3);
+}
+
+.btn:hover svg {
+   transform: translateX(0);
+}
+
+.btn:active {
+   transform: scale(0.95);
+}
+
+/* BUTTON-ENDS */
+
+/* BACKGROUD-GRADIENT-START */
+
+.back-color{
+   display:flex;
+   flex-direction: column;
+   align-items: flex-start;
+   position:absolute;
+   z-index: -1;
+   width: 1260px;
+   height:500px;
+   top: 26%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   border-radius:5% 0% 36% 95% / 0% 76% 89% 0% ;
+   background: linear-gradient(175deg, #cda274,#cda2749a, #fff9f2b5, rgb(255, 255, 255))
+}
+
+.back-color .gradient-color{
+   margin-top:80px;
+   padding: 30px;
+}
+
+.gradient-color .username-user{
+   padding-bottom:5px;
+}
+
+/* BACKGROUD-GRADIENT-ENDS */
+
+/* CONTAINER-CONTENT-START */
+
+.container-main-content{
+   width: 1201px;
+   margin-left: auto;
+   margin-right: auto;
+   padding-top: 100px;
+}
+
+.container-content-1{
+   margin-top: 125px;
+   background-color: rgb(244, 244, 244);
+   width: 100%;
+   height: 400px;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   padding-top: 10px;
+   border-radius:20px;
+   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.386);
+}
+
+.container-content-2{
+   margin-top: 125px;
+   background-color: red;
+   width: 100%;
+   height: 1000px;
+}
+
+.content-image{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   width: 350px;
+   height: 370px;
+}
+
+.content-image a img{
+   width: 100%;
+   height: 100%;
+}
+
+.image-border{
+   width: 80%;
+   height: 70%;
+   background-color: #cda274;
+   border-radius: 20px;
+   padding: 30px;
+   cursor: pointer;
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.386);
+}
+
+.content-image p{
+   padding-top:13px;
+   font-family: "Wix Madefor Display", sans-serif;
+   font-size: 18px;
+}
+
+/* CONTAINER-CONTENT-ENDS */

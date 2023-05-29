@@ -15,7 +15,7 @@ use App\Http\Controllers\penggunaController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout');
 });
 
 Route::get('/home', function () {
@@ -35,3 +35,7 @@ Route::get('/abot', function () {
 });
 
 Route::get('/userlayout',[penggunaController::class,'onlyView']);
+
+Route::get('/user', function () {
+    return view('usernew');
+  });
