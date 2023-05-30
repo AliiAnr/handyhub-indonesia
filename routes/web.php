@@ -1,41 +1,26 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Pengguna;
 use App\Http\Controllers\penggunaController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+use App\Http\Controllers\profilcontroller;
+use App\Http\Controllers\RegisterControler;
 
 Route::get('/', function () {
     return view('layout');
-});
-
-Route::get('/home', function () {
-    return view('home', [
-        "Email" => "sdasdad",
-        "Name" => "Ali An Nuur",
-        "Nim" => "F1D021001"
-    ]);
-});
-
-Route::get('/layout', function () {
-    return view('layout');
-  });
-  
-Route::get('/abot', function () {
-    return view('abouy');
-});
+})->name('/');
 
 Route::get('/userlayout',[penggunaController::class,'onlyView']);
 
 Route::get('/user', function () {
     return view('usernew');
-  });
+  })->middleware('auth');
+Route::post('/registerUser',[RegisterControler::class,'newUserReg']);
+Route::post('/loginAuth',[LoginController::class,'auth']);
+Route::post('/logout',[LoginController::class,'logout']);
+Route::get('/profil',[penggunaController::class,'profil'])->middleware('auth');
+Route::post('/profil/upfoto',[profilcontroller::class,'upfoto'])->middleware('auth');
+Route::post('/profil/newprof/password',[profilcontroller::class,'newpassword'])->middleware('auth');
+Route::post('/profil/newprof/nama',[profilcontroller::class,'newnama'])->middleware('auth');
+Route::post('/profil/newprof/alamat',[profilcontroller::class,'newalamat'])->middleware('auth');

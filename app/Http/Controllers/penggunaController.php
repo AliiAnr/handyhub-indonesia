@@ -15,4 +15,8 @@ class penggunaController extends Controller
     public function onlyView(){
         return view('user');
     }
+    public function profil(){
+        return view('profil');
+    }
+
 }
