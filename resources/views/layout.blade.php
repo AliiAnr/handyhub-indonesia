@@ -57,7 +57,7 @@
                {{ auth()->user()->name }}
                </a>
                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/profil">Profil</a></li>
+                  <li><a class="dropdown-item" href="/profil">Edit Profil</a></li>
                   <li><a class="dropdown-item" href="#">Notifikasi</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li>

@@ -12,14 +12,13 @@
 <body>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
-    <script src="/assets/js/profil.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     {{-- NAVIGATION-START--}}
       <nav class="btn-navigation">
          <div class="container-fluid">
             <div class="pic-logo-handyhub">
                <div class="logo">
-                  <a href="#">
+                  <a href="/">
                      <img src="assets/img/start-renovation.png" alt="logo">
                   </a>
                </div>
@@ -27,7 +26,7 @@
             </div>
             <div class="btn-middle">
                <ul class="ul-nav">
-               <li class="li-nav scroll-link"><a class="a-nav">Profil</a></li>
+               <li class="li-nav scroll-link"><a class="a-nav">Edit Profil</a></li>
                </ul>
             </div>
             <div class="log-sign-up">
@@ -36,7 +35,7 @@
                {{ auth()->user()->name }}
                </a>
                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item active">Profil</a></li>
+                  <li><a class="dropdown-item active">Edit Profil</a></li>
                   <li><a class="dropdown-item" href="#">Notifikasi</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li>
@@ -54,44 +53,80 @@
       </nav>
       {{-- NAVIGATION-ENDS --}}
       <div class="container rounded bg-white mt-5 mb-5">
-    <div class="row">
-        <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-0 py-0"><img class="rounded-circle mt-5" width="150px" src="assets\img\{{auth()->user()->ProfilPic}}"><span class="font-weight-bold">{{auth()->user()->name}}</span><span class="text-black-50">{{auth()->user()->email}}</span><span> </span></div>
-            <p></p>
-            <div id="awaldisplay" onclick="newFoto" class="d-grid gap-2 col-6 mx-auto">
-                <button id="mauganti" type="button" class="btn btn-outline-secondary">Ganti Foto</button>
-            </div>
+        <div class="row">
+            <div class="col-md-5 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-0 py-0">
+                    @if(auth()->user()->ProfilPic)
+                        <img class="rounded-circle mt-5" width="150px" src="storage\{{auth()->user()->ProfilPic}}">
+                    @else
+                        <img class="rounded-circle mt-5" width="150px" src="assets\img\defaulprofilpic.jpg">
+                    @endif
+                    <span class="font-weight-bold">{{auth()->user()->name}}</span><span class="text-black-50">{{auth()->user()->email}}</span><span> </span>
+                </div>
+                <p></p>
+                <script>
+                    function showone() {
+                        var x = document.getElementById("UpPic");
+                        var y = document.getElementById("onawal");
+                        if (x.style.display === "none"||y.style.display === "block") {
+                            x.style.display = "block";
+                            y.style.display = "none";
+                        } else {    
+                            x.style.display = "none";
+                            y.style.display = "block";
+                        }
+                    }
+                </script>
+                <div id="onawal">
+                    <div id="awaldisplay" class="d-grid gap-2 col-6 mx-auto">
+                        <button id="mauganti" type="button" onclick="showone()" class="btn btn-outline-secondary">Ganti Foto</button>
+                    </div>
+                </div>
             <div class="mb-3" id="UpPic" style="display: none;">
-                <label for="formFile" class="form-label">New Profil Picture</label>
-                <input class="form-control" type="file" id="formFile">
+            <form action="/profil/upfoto" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button id="mauganti" type="submit" onclick="showone()" class="btn btn-outline-secondary">Okay Ganti Foto</button>
+                </div>
+                    <label for="formFile" class="form-label">New Profil Picture</label>
+                    <input class="form-control" type="file" id="image" name="image">
+                </form>
             </div>
+            <script src="/assets/js/profil.js"></script>
         </div>
         <div class="col-md-5 border-right">
             <div class="d-flex justify-content-between align-items-center mb-3">
-                <h4 class="text-right">Profile Settings</h4>
+                <h4 class="text-right">Any Change?</h4>
             </div>
             <div class="row mt-3">
                 <div class="col-md-12">
-                    <label class="labels">Nama</label>
-                    <input type="text" class="form-control" placeholder="Nama" value="">
-                    <p></p>
-                    <span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>Ganti Nama</span>
+                    <div class="input-group mb-3">
+                    <form action="/profil/newprof/nama" method="post">
+                    @csrf
+                        <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama" aria-label="Nama" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Ganti</button>
+                    </form>
+                    </div> 
                 </div>
                 <div class="col-md-12">
-                    <label class="labels">Alamat</label>
-                    <input type="text" class="form-control" placeholder="Nama" value="">
-                    <p></p>
-                    <span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>Ganti Alamat</span>
+                <div class="input-group mb-3">
+                    <form action="/profil/newprof/alamat" method="post">
+                    @csrf
+                    <input type="text" class="form-control" name="alamat" placeholder="Alamat" aria-label="Alamat" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Ganti</button>
+                    </form>
+                </div>
                 </div>
                 <div class="col-md-12">
-                    <label class="labels">Password</label>
-                    <input type="text" class="form-control" placeholder="Nama" value="">
-                    <p></p>
-                    <span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>Ganti Password</span>
+                <div class="input-group mb-3">
+                    <form action="/profil/newprof/password" method="post">
+                    @csrf
+                    <input type="text" class="form-control" placeholder="Password" name="password" aria-label="Password" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Ganti</button>
+                    </form>
                 </div>
-                
+                </div>
             </div>
-            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
         </div>
     </div>
 </div>
