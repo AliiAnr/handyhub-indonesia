@@ -820,6 +820,7 @@ li {
     font-weight: bold;
     font-size: 16px;
     line-height: 150%;
+    cursor: pointer;
 }
 
 .contact-button a{
