@@ -27,7 +27,7 @@
                <ul class="ul-nav">
                <li class="li-nav scroll-link"><a class="a-nav" href="#home">Home</a></li>
                <li class="li-nav scroll-link"><a class="a-nav" href="#services">Services</a></li>
-               <li class="li-nav scroll-link1"><a class="a-nav" href="#project">Project</a></li>
+               <li class="li-nav scroll-link"><a class="a-nav" href="#project">Project</a></li>
                <li class="li-nav scroll-link"><a class="a-nav" href="#blog">Blog</a></li>
                </ul>
             </div>
