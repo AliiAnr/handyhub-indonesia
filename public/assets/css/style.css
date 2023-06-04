@@ -8,6 +8,21 @@ li {
     list-style-type: none;
 }
 /* NAVIGATION-START */
+
+/* ganti */
+.alert{
+    z-index: 9999;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ganti */
+
+
 .pic-logo-handyhub {
     display: flex;
 }
@@ -107,6 +122,11 @@ li {
     transition: all 0.2s ease;
     border: none;
     background: none;
+    outline: none;
+}
+
+.btn-login-sign button{
+    border: none;
 }
 
 .btn::before {
@@ -128,6 +148,9 @@ li {
     letter-spacing: 0.05em;
     color: #fbfbfb;
     cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
 }
 
 .btn svg {
@@ -269,6 +292,7 @@ li {
 }
 
 .service-item {
+    width: 100%;
     margin-top: 40px;
     display: flex;
     flex-direction: row;
@@ -914,7 +938,7 @@ strong {
   .form_container {
     position: fixed;
     max-width: 500px;
-    height: 500px;
+    height: 600px;
     width: 100%;
     top: 50%;
     left: 50%;
@@ -1056,6 +1080,7 @@ strong {
     cursor: pointer;
     font-family: "Wix Madefor Display", sans-serif;
     font-size: 20px;
+    border: none;
   }
   
   .form_container .button:hover{
@@ -1093,6 +1118,12 @@ strong {
   
   .forgot_pw {
     font-family: "Wix Madefor Display", sans-serif;
+    font-size: 15px;
+    color: #7c2ae8b9;
+  }
+  
+  .forgot_pw:hover{
+    color: #6f00ff;
   }
   
  /* LOGIN-FORM-ENDS */

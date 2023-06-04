@@ -33,29 +33,10 @@
                 <li class="li-nav scroll-link"><a class="a-nav" href="#blog">Akun</a></li>
                </ul>
             </div>
-            <div class="log-sign-up">
-               <div class="btn-login-sign">
-                  <a href="#" target="_blank">
-                     <button class="btn">
-                        <span>Sign up</span>
-                        <svg viewBox="0 0 13 10" height="10px" width="15px">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                    </button>
-                  </a>
-               </div>
-               <div class="btn-login-sign">
-                  <a href="#" target="_blank">
-                     <button class="btn">
-                        <span>Sign in</span>
-                        <svg viewBox="0 0 13 10" height="10px" width="15px">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                    </button>
-                  </a>
-               </div>
+            <div class="btn-profile">
+               <a href="#">
+                  <img src="/assets/img/user.png" alt="" class="profil-image">
+               </a>
             </div>
          </div>
       </nav>
