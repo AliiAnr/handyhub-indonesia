@@ -7,17 +7,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Auth\SessionGuard;
 use Illuminate\Database\Eloquent\Model;
 
-class pengguna extends Authenticatable
+class tukang extends Authenticatable
 {
     use HasFactory;
-    // protected $fillable = [
-    //     'name',
-    //     'email',
-    //     'password'
-    // ];
+    
     public function getTable()
     {
-        return 'penggunas';
+        return 'tukangs';
     }
     protected $guarded = ['id'];
 }

@@ -11,7 +11,6 @@
    <title>Bantuan</title>
 </head>
 <body>
-{{-- NAVIGATION-START--}}
       <nav class="btn-navigation">
          <div class="container-fluid">
             <div class="pic-logo-handyhub">
@@ -37,36 +36,24 @@
             </div>
          </div>
       </nav>
-      {{-- NAVIGATION-ENDS --}}
    
    <div class="container-main-content">
       <div class="container-content-1">
+      @foreach($pesanan as $item)
          <div class="container-item">
-            <a href="#" class="">
+            <a href="/pesanan/{{$item->id}}" class="">
                <div class="btn-item-service">
                   <div class="btn-logo">
                      <div class="back-logo">
-                        <img src="/assets/img/phone-call.png" alt="">
+                        <img src="storage\{{$item->Foto}}" alt="">
                      </div>
-                     <h4>Telepon</h4>
+                     <h4>{{$item->waktu." ".$item->status}}</h4>
                   </div>
                   <img src="/assets/img/right-arrow.png" alt="">
                </div>  
             </a>
          </div>
-         <div class="container-item">
-            <a href="#" class="">
-               <div class="btn-item-service">
-                  <div class="btn-logo">
-                     <div class="back-logo">
-                        <img class = "wa" src="/assets/img/whatsapp.png" alt="">
-                     </div>
-                     <h4>WhatsApp</h4>
-                  </div>
-                  <img src="/assets/img/right-arrow.png" alt="">
-               </div>  
-            </a>
-         </div>
+         @endforeach
       </div>
    </div>
 </body>

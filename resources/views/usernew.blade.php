@@ -14,12 +14,12 @@
    <title>User | HandyHub</title>
 </head>
    <body>
-      {{-- NAVIGATION-START--}}
+   {{-- NAVIGATION-START--}}
       <nav class="btn-navigation">
          <div class="container-fluid">
             <div class="pic-logo-handyhub">
                <div class="logo">
-                  <a href="#">
+                  <a href="/">
                      <img src="assets/img/start-renovation.png" alt="logo">
                   </a>
                </div>
@@ -27,15 +27,15 @@
             </div>
             <div class="btn-middle">
                <ul class="ul-nav">
-                <li class="li-nav scroll-link"><a class="a-nav" href="#home">Beranda</a></li>
-                <li class="li-nav scroll-link"><a class="a-nav" href="#services">Pesanan</a></li>
-                <li class="li-nav scroll-link"><a class="a-nav" href="#project">Bantuan</a></li>
-                <li class="li-nav scroll-link"><a class="a-nav" href="#blog">Akun</a></li>
+                <li class="li-nav scroll-link"><a class="a-nav" href="/userMainMenu">Beranda</a></li>
+                <li class="li-nav scroll-link"><a class="a-nav" href="/listpesanan">Pesanan</a></li>
+                <li class="li-nav scroll-link"><a class="a-nav" href="/bantuan">Bantuan</a></li>
+                <li class="li-nav scroll-link"><a class="a-nav" href="/Listriwayat">Riwayat</a></li>
                </ul>
             </div>
             <div class="btn-profile">
-               <a href="#">
-                  <img src="/assets/img/user.png" alt="" class="profil-image">
+               <a href="/profil">
+                  <img src="/assets/img/user.png" alt="" class="profil-image"> 
                </a>
             </div>
          </div>
@@ -47,7 +47,7 @@
             <div class="container-content-1">
                <div class="content-image">
                   <div class="image-border">
-                     <a href="#">
+                     <a href="/homemaintanance">
                         <img src="/assets/img/mechanic.png" alt="Description of the image">
                      </a>
                   </div>
@@ -107,19 +107,29 @@
             </div>
             <div class="container-content-2">
                <div class="item-content">
+                  <a href="https://www.jayaboard.com/in_id/">
                   <img src="/assets/img/sponsor-1.jpeg" alt="">
+                  </a>
                </div>
                <div class="item-content">
+                  <a href="https://conwood.co.id/">
                   <img src="/assets/img/sponsor-2.png" alt="">
+                  </a>
                </div>
                <div class="item-content">
+                  <a href="https://www.maxon.net/en/">
                   <img src="/assets/img/sponsor-3.jpg" alt="">
+                  </a>
                </div>
                <div class="item-content">
+                  <a href="https://indogress.com/">
                   <img src="/assets/img/sponsor-4.png" alt="">
+                  </a>
                </div>
                <div class="item-content">
+                  <a href="https://www.propanraya.com/id/">
                   <img src="/assets/img/sponsor-5.png" alt="">
+                  </a>
                </div>
             </div>
             <div class="text-item-content">

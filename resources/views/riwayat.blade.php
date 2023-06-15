@@ -11,33 +11,33 @@
    <title>Layanan</title>
 </head>
 <body>
-   {{-- NAVIGATION-START--}}
-   <nav class="btn-navigation">
-      <div class="container-fluid">
-         <div class="pic-logo-handyhub">
-            <div class="logo">
-               <a href="#">
-                  <img src="assets/img/start-renovation.png" alt="logo">
+{{-- NAVIGATION-START--}}
+      <nav class="btn-navigation">
+         <div class="container-fluid">
+            <div class="pic-logo-handyhub">
+               <div class="logo">
+                  <a href="/">
+                     <img src="assets/img/start-renovation.png" alt="logo">
+                  </a>
+               </div>
+               <h1 class="text-logo">HandyHub</h1>
+            </div>
+            <div class="btn-middle">
+               <ul class="ul-nav">
+                <li class="li-nav scroll-link"><a class="a-nav" href="/userMainMenu">Beranda</a></li>
+                <li class="li-nav scroll-link"><a class="a-nav" href="/listpesanan">Pesanan</a></li>
+                <li class="li-nav scroll-link"><a class="a-nav" href="/bantuan">Bantuan</a></li>
+                <li class="li-nav scroll-link"><a class="a-nav" href="/Listriwayat">Riwayat</a></li>
+               </ul>
+            </div>
+            <div class="btn-profile">
+               <a href="/profil">
+                  <img src="/assets/img/user.png" alt="" class="profil-image"> 
                </a>
             </div>
-            <h1 class="text-logo">HandyHub</h1>
          </div>
-         <div class="btn-middle">
-            <ul class="ul-nav">
-             <li class="li-nav scroll-link"><a class="a-nav" href="#home">Beranda</a></li>
-             <li class="li-nav scroll-link"><a class="a-nav" href="#services">Pesanan</a></li>
-             <li class="li-nav scroll-link"><a class="a-nav" href="#project">Bantuan</a></li>
-             <li class="li-nav scroll-link"><a class="a-nav" href="#blog">Riwayat</a></li>
-            </ul>
-         </div>
-         <div class="btn-profile">
-            <a href="#">
-               <img src="/assets/img/user.png" alt="" class="profil-image">
-            </a>
-         </div>
-      </div>
-   </nav>
-   {{-- NAVIGATION-ENDS --}}
+      </nav>
+      {{-- NAVIGATION-ENDS --}}
    <div class="container-main-content">
       <div class="user-page">
          <div class="content">

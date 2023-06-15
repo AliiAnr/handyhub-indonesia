@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use App\Models\pengguna;
+use App\Models\tukang;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,12 @@ class profilcontroller extends Controller
             $validate['image'] = $request->file('image')->store('fotoprofil');
 
         }
-        $ison = pengguna::find(auth()->user()->id);
+        if (Auth::guard('tukang')->check()){
+            $ison = tukang::find(auth()->user()->id);
+        }else{
+            $ison = pengguna::find(auth()->user()->id);
+        }
+        
         $ison->ProfilPic = $validate['image'];
         $ison->save();
         return redirect('profil');
@@ -31,7 +37,11 @@ class profilcontroller extends Controller
             'password' => 'required|min:6'
         ]);
     
-        $ison = Pengguna::find(auth()->user()->id);
+        if (Auth::guard('tukang')->check()){
+            $ison = tukang::find(auth()->user()->id);
+        }else{
+            $ison = pengguna::find(auth()->user()->id);
+        }
         $ison->password = bcrypt($validate['password']);
         $ison->save();
     
@@ -43,7 +53,11 @@ class profilcontroller extends Controller
             'nama' => 'required|min:3'
         ]);
     
-        $ison = Pengguna::find(auth()->user()->id);
+        if (Auth::guard('tukang')->check()){
+            $ison = tukang::find(auth()->user()->id);
+        }else{
+            $ison = pengguna::find(auth()->user()->id);
+        }
         $ison->name = $validate['nama'];
         $ison->save();
     
@@ -56,7 +70,11 @@ class profilcontroller extends Controller
             'alamat' => 'required|min:2'
         ]);
     
-        $ison = Pengguna::find(auth()->user()->id);
+        if (Auth::guard('tukang')->check()){
+            $ison = tukang::find(auth()->user()->id);
+        }else{
+            $ison = pengguna::find(auth()->user()->id);
+        }
         $ison->Alamat = $validate['alamat'];
         $ison->save();
     
