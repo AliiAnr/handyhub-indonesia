@@ -81,13 +81,13 @@
                      <h3>Konfirmasi Diterima</h3>
                   </div>
                   <div class="btn-confirmation-after-2">
-                     <button class="btn-content-confirmation-3" onclick="#">
+                     <button class="btn-content-confirmation-3" onclick="">
                         <span>Pekerjaan Selesai</span>
                      </button> 
                      <button class="btn-content-confirmation-2" onclick="openPopup()">
                         <span>Detail Pemesan</span>
                      </button> 
-                     <button class="btn-content-confirmation-2" onclick="#">
+                     <button class="btn-content-confirmation-2" onclick="">
                         <span>Hubungi Pemesan</span>
                      </button> 
                   </div>
@@ -101,7 +101,7 @@
                      <button class="btn-content-confirmation-2" onclick="openPopup()">
                         <span>Detail Pemesan</span>
                      </button> 
-                     <button class="btn-content-confirmation-2" onclick="#">
+                     <button class="btn-content-confirmation-2" onclick="">
                         <span>Hubungi Pemesan</span>
                      </button> 
                   </div>

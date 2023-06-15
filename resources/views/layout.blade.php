@@ -53,37 +53,51 @@
                </ul>
             </div>
             <div class="log-sign-up">
-            @auth
-            <li class="nav-item dropdown">
-               
-               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-               {{ auth()->user()->name }}
+            @if (Auth::guard('tukang')->check())
+               <div class="btn-profile">
+               @auth
+               @if(auth()->user()->ProfilPic)
+                  <a href="/profil">
+                     <img src="/assets/img/user.png" alt="" class="profil-image"> 
+                  </a>
+               @else
+                  <a href="/profil">
+                     <img src="/storage/{{ auth()->user()->ProfilPic }}" alt="" class="profil-image"> 
+                  </a>
+               @endif
+               @else
+               <a href="/profil">
+                     <img src="/assets/img/user.png" alt="" class="profil-image"> 
                </a>
-               <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/profil">Edit Profil</a></li>
-                  <li><a class="dropdown-item" href="#">Notifikasi</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li>
-                  <form action="/logout" method="post">
-                     @csrf
-                     <button type="submit" class="dropdown-item">
-                     <i class="bi bi-box-arrow-in-right"></i>
-                        Log Out
-                     </button>
-                  </form>  
-               </ul>
-            </li>
-            @else
-               <div class="btn-login-sign">
-                     <button class="btn" id="form-open">
-                        <span>Sign in</span>
-                        <svg viewBox="0 0 13 10" height="10px" width="15px">
-                           <path d="M1,5 L11,5"></path>
-                           <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                  </button>
+               @endauth
                </div>
-            @endauth
+               {{ auth()->guard('tukang')->user()->name }}
+            @else
+               @auth
+               <div class="btn-profile">
+                  @if(auth()->user()->ProfilPic === NULL)
+                  <a href="/profil">
+                     <img src="/assets/img/user.png" alt="" class="profil-image"> 
+                  </a>
+                  @else
+                  <a href="/profil">
+                     <img src="/storage/{{auth()->user()->ProfilPic}}" alt="" class="profil-image"> 
+                  </a>
+                  @endif
+               </div>
+               {{ auth()->user()->name }}
+               @else
+                  <div class="btn-login-sign">
+                        <button class="btn" id="form-open">
+                           <span>Sign in</span>
+                           <svg viewBox="0 0 13 10" height="10px" width="15px">
+                              <path d="M1,5 L11,5"></path>
+                              <polyline points="8 1 12 5 8 9"></polyline>
+                           </svg>
+                     </button>
+                  </div>
+               @endauth
+            @endif
             </div>
          </div>
       </nav>
@@ -103,7 +117,7 @@
                      There are many variations of the passages of lorem Ipsum fromavailable,variations of the passages.
                   </p>                
                </div>
-               <button class="btn-content-started" onclick="window.open('/user', '_blank')">
+               <button class="btn-content-started" onclick="window.open('/userMainMenu', '_blank')">
                   <span>Get Started</span>
                   <svg style="margin-top: 4px" width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M2 8.43542L15.7232 8.29857M10.6182 1.91138L17.1412 8.43436L10.4868 15.0887" stroke="#CDA274" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>

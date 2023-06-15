@@ -11,33 +11,33 @@
    <title>Home | Maintance</title>
 </head>
 <body>
-   {{-- NAVIGATION-START--}}
-   <nav class="btn-navigation">
-      <div class="container-fluid">
-         <div class="pic-logo-handyhub">
-            <div class="logo">
-               <a href="#">
-                  <img src="assets/img/start-renovation.png" alt="logo">
+{{-- NAVIGATION-START--}}
+      <nav class="btn-navigation">
+         <div class="container-fluid">
+            <div class="pic-logo-handyhub">
+               <div class="logo">
+                  <a href="/">
+                     <img src="assets/img/start-renovation.png" alt="logo">
+                  </a>
+               </div>
+               <h1 class="text-logo">HandyHub</h1>
+            </div>
+            <div class="btn-middle">
+               <ul class="ul-nav">
+                <li class="li-nav scroll-link"><a class="a-nav" href="/userMainMenu">Beranda</a></li>
+                <li class="li-nav scroll-link"><a class="a-nav" href="/listpesanan">Pesanan</a></li>
+                <li class="li-nav scroll-link"><a class="a-nav" href="/bantuan">Bantuan</a></li>
+                <li class="li-nav scroll-link"><a class="a-nav" href="/Listriwayat">Riwayat</a></li>
+               </ul>
+            </div>
+            <div class="btn-profile">
+               <a href="/profil">
+                  <img src="/assets/img/user.png" alt="" class="profil-image"> 
                </a>
             </div>
-            <h1 class="text-logo">HandyHub</h1>
          </div>
-         <div class="btn-middle">
-            <ul class="ul-nav">
-             <li class="li-nav scroll-link"><a class="a-nav" href="#home">Beranda</a></li>
-             <li class="li-nav scroll-link"><a class="a-nav" href="#services">Pesanan</a></li>
-             <li class="li-nav scroll-link"><a class="a-nav" href="#project">Bantuan</a></li>
-             <li class="li-nav scroll-link"><a class="a-nav" href="#blog">Riwayat</a></li>
-            </ul>
-         </div>
-         <div class="btn-profile">
-            <a href="#">
-               <img src="/assets/img/user.png" alt="" class="profil-image">
-            </a>
-         </div>
-      </div>
-   </nav>
-   {{-- NAVIGATION-ENDS --}}
+      </nav>
+      {{-- NAVIGATION-ENDS --}}
    
    {{-- CONTAINER-CONTENT-START --}}
    <div class="container-main-content">
@@ -50,62 +50,16 @@
          </div>
       </div>
       <div class="container-content-3">
+      @foreach($kategori as $item)
          <div class="container-item">
-            <a href="#" class="">
+            <a href="/layanan/{{ $item->id }}" class="">
                <div class="btn-item-service">
-                  <h4>Alumunium & Kaca</h4>
+                  <h4>{{ $item->JenisPelayanan }}</h4>
                   <img src="/assets/img/right-arrow.png" alt="">
-               </div>  
+               </div>
             </a>
          </div>
-         <div class="container-item">
-            <a href="#" class="">
-               <div class="btn-item-service">
-                  <h4>Atap</h4>
-                  <img src="/assets/img/right-arrow.png" alt="">
-               </div>  
-            </a>
-         </div>
-         <div class="container-item">
-            <a href="#" class="">
-               <div class="btn-item-service">
-                  <h4>Bor Sumur & Pompa</h4>
-                  <img src="/assets/img/right-arrow.png" alt="">
-               </div>  
-            </a>
-         </div>
-         <div class="container-item">
-            <a href="#" class="">
-               <div class="btn-item-service">
-                  <h4>Cat</h4>
-                  <img src="/assets/img/right-arrow.png" alt="">
-               </div>  
-            </a>
-         </div>
-         <div class="container-item">
-            <a href="#" class="">
-               <div class="btn-item-service">
-                  <h4>Dinding</h4>
-                  <img src="/assets/img/right-arrow.png" alt="">
-               </div>  
-            </a>
-         </div>
-         <div class="container-item">
-            <a href="#" class="">
-               <div class="btn-item-service">
-                  <h4>Keramik</h4>
-                  <img src="/assets/img/right-arrow.png" alt="">
-               </div>  
-            </a>
-         </div>
-         <div class="container-item">
-            <a href="#" class="">
-               <div class="btn-item-service">
-                  <h4>Pipa Air & Tanki Air</h4>
-                  <img src="/assets/img/right-arrow.png" alt="">
-               </div>  
-            </a>
-         </div>
+      @endforeach
       </div>
    </div>
    {{-- CONTAINER-CONTENT-ENDS --}}

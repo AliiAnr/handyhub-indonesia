@@ -16,7 +16,7 @@
       <div class="container-fluid">
          <div class="pic-logo-handyhub">
             <div class="logo">
-               <a href="#">
+               <a href="/">
                   <img src="assets/img/start-renovation.png" alt="logo">
                </a>
             </div>
@@ -32,21 +32,43 @@
             </ul>
          </div>
          <div class="btn-profile">
-            <a href="#">
+            <a href="/profil">
                <img src="/assets/img/user.png" alt="" class="profil-image">
             </a>
          </div>
       </div>
    </nav>
    {{-- NAVIGATION-ENDS --}}
-   
-   {{-- CONTAINER-UNKNOWN-CONTENT-START --}}
-   <div class="container-unknown-content">
-      <div class="btn-unknown-value">
-         <h1>Belum <span>terdapat pesanan</span></h1>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   @if($list->isEmpty())
+      {{-- CONTAINER-UNKNOWN-CONTENT-START --}}
+      <div class="container-unknown-content">
+         <div class="btn-unknown-value">
+            <h1>Belum <span>terdapat pesanan</span></h1>
+         </div>
       </div>
-   </div>
-   {{-- CONTAINER-UNKNOWN-CONTENT-ENDS --}}
+      {{-- CONTAINER-UNKNOWN-CONTENT-ENDS --}}
+   @else
+      @foreach($list as $key => $item)
+         <div class="listpesanan-item">
+            <a href="/pesanan/{{$item->id}}" class="">
+               <h4>{{$listname[$key]->name." ".$item->status}}</h4>
+               <p>{{$item->pesan}}</p>
+            </a>
+         </div>
+         <br>
+      @endforeach
+   @endif
+
    
    {{-- <div class="container-main-content">
       <div class="user-page">
@@ -77,7 +99,7 @@
                      <button class="btn-content-confirmation-2" onclick="openPopup()">
                         <span>Detail Pemesan</span>
                      </button> 
-                     <button class="btn-content-confirmation-2" onclick="#">
+                     <button class="btn-content-confirmation-2" onclick="">
                         <span class="greeen">Terima Pesanan</span>
                      </button> 
                   </div>
@@ -111,6 +133,6 @@
          </div>
       </div>
    </div> --}}
-<script src="assets/js/tukang.js"></script>
+   <script src="assets/js/tukang.js"></script>
 </body>
 </html>

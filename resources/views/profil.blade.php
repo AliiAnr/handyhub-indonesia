@@ -32,11 +32,14 @@
             <div class="log-sign-up">
             <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-               {{ auth()->user()->name }}
+                @if(Auth::guard('tukang')->check())
+                    {{auth()->guard('tukang')->user()->name}}
+                @else
+                    {{ auth()->user()->name }}
+                @endif
                </a>
                <ul class="dropdown-menu">
                   <li><a class="dropdown-item active">Edit Profil</a></li>
-                  <li><a class="dropdown-item" href="#">Notifikasi</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li>
                   <form action="/logout" method="post">

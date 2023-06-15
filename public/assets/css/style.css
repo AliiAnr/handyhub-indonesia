@@ -179,7 +179,26 @@ li {
 }
 
 /* BUTTON-SIGN/LOG-IN-ENDS */
+/* BUTTON-START */
 
+.btn-profile {
+    cursor: pointer;
+    width: 50px;
+    height: 50px; 
+    border-radius: 50%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(193, 193, 193, 0.9); 
+ }
+ 
+ .btn-profile a img{
+    height: 30px;
+    width: 30px;
+ }
+
+/* BUTTON-ENDS */
 /* CONTAINER-CONTENT-START */
 .container-content {
     width: 100%;
