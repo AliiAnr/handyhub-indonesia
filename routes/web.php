@@ -37,6 +37,47 @@ Route::get('/tukang', function () {
 Route::get('/tukangriwayat', function () {
     return view('tukangriwayat');
   });
+  Route::get('/admin', function () {
+    return view('admin');
+});
+  Route::get('/admin-customer', function () {
+    return view('admin-customer');
+});
+  Route::get('/admin-riwayat', function () {
+    return view('admin-riwayat');
+});
+  Route::get('/pelayanan', function () {
+    return view('pelayanan');
+});
+  Route::get('/tambah-customer', function () {
+    return view('tambah_customer');
+});
+  Route::get('/tambah-pelayanan', function () {
+    return view('tambah_pelayanan');
+});
+  Route::get('/tambah-tukang', function () {
+    return view('tambah_tukang');
+});
+  Route::get('/testimoni', function () {
+    return view('testimoni');
+});
+  Route::get('/admin-tukang', function () {
+    return view('admin-tukang');
+});
+  Route::get('/ubah-customer', function () {
+    return view('ubah_customer');
+});
+  Route::get('/ubah-pelayanan', function () {
+    return view('ubah_pelayanan');
+});
+  Route::get('/ubah-testimoni', function () {
+    return view('ubah_testimoni');
+});
+  Route::get('/ubah-tukang', function () {
+    return view('ubah_tukang');
+});
+
+
 // Route::get('/user', function () {
 //     return view('usernew');
 //   })->middleware('auth');
