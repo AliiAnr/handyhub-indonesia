@@ -30,74 +30,6 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">Admin HandyHub</div>
-            </a>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="/admin">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Nav Item - Managemen User Collapse Menu -->
-            <li class="nav-item active">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-                    aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Managemen User</span>
-                </a>
-                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/admin-tukang">Managemen Tukang</a>
-                        <a class="collapse-item" href="/admin-customer">Managemen Customer</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - History -->
-            <li class="nav-item">
-                <a class="nav-link" href="/pelayanan">
-                    <i class="fas fa-fw fa-hammer"></i>
-                    <span>Pelayanan</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/testimoni">
-                    <i class="fas fa-fw fa-comments"></i>
-                    <span>Testimoni</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/admin-riwayat">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Riwayat</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-        </ul>
-        <!-- End of Sidebar -->
-
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -128,18 +60,22 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{auth()->user()->name}}</span>
+                                @if(auth()->user()->ProfilPic)
+                                <img class="img-profile rounded-circle" src="storage\{{auth()->user()->ProfilPic}}">
+                                @else
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                                @endif
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="/userMainMenu">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
+                                    Home
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -155,53 +91,53 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Data Customer</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Profil</h1>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-body">
                           <div class="card-inside">
-                            <h1 class="card-title">Ubah Data Customer</h1>
-                            <form id="tambah-customer-form" enctype="multipart/form-data" action="/customerchanged/{{$id}}" method="POST">
-                            @csrf
+                            <h1 class="card-title">Ubah Data Diri</h1>
+                            <form id="tambah-customer-form" enctype="multipart/form-data">
+                              @csrf
                               <div class="form-group">
                                 <label for="nama">Nama:</label>
-                                <input type="text" id="nama" name="name" class="form-control">
+                                <input type="text" id="nama" name="nama" class="form-control" required>
                               </div>
                               <div class="form-group">
                                 <label for="nohp">No. HP:</label>
-                                <input type="text" id="nohp" name="No_Hp" class="form-control">
+                                <input type="text" id="nohp" name="nohp" class="form-control" required>
                               </div>
                               <div class="form-group">
                                 <label for="email">Email:</label>
-                                <input type="email" id="email" name="email" class="form-control">
+                                <input type="email" id="email" name="email" class="form-control" required>
                               </div>
                               <div class="form-group">
                                 <label for="password">Password:</label>
-                                <input type="password" id="password" name="password" class="form-control">
+                                <input type="password" id="password" name="password" class="form-control" required>
                               </div>
                               <div class="form-group">
                                 <label for="provinsi">Provinsi:</label>
-                                <input type="text" id="provinsi" name="provinsi" class="form-control">
+                                <input type="text" id="provinsi" name="provinsi" class="form-control" required>
                               </div>
                               <div class="form-group">
                                 <label for="kota">Kota/Kabupaten:</label>
-                                <input type="text" id="kota" name="Alamat" class="form-control">
+                                <input type="text" id="kota" name="kota" class="form-control" required>
                               </div>
                               <div class="form-group">
                                 <label for="kecamatan">Kecamatan:</label>
-                                <input type="text" id="kecamatan" name="kecamatan" class="form-control">
+                                <input type="text" id="kecamatan" name="kecamatan" class="form-control" required>
                               </div>
                               <div class="form-group">
                                 <label for="kodepos">Kode Pos:</label>
-                                <input type="text" id="kodepos" name="kodepos" class="form-control">
+                                <input type="text" id="kodepos" name="kodepos" class="form-control" required>
                               </div>
                               <div class="form-group">
                                 <label for="jalan">Nama Jalan:</label>
-                                <input type="text" id="jalan" name="jalan" class="form-control">
+                                <input type="text" id="jalan" name="jalan" class="form-control" required>
                               </div>
                               <div class="form-group">
                                 <label for="foto">Foto:</label>
-                                <input type="file" id="foto" name="image">
+                                <input type="file" id="foto" name="foto" required>
                               </div>
                               <button type="submit" class="btn btn-primary">Simpan</button>
                             </form>

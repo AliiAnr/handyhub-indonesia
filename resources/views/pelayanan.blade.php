@@ -129,7 +129,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="assets/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -177,31 +177,16 @@
                                             <th>Kategori Pelayanan</th>
                                             <th>Aksi</th>
                                         </tr>
+                                        @foreach($pelayanan as $item)
                                         <tr>
-                                            <td>Home Maintance</td>
-                                            <td>Alumunium & Kaca</td>
+                                            <td>{{$item->Kategori}}</td>
+                                            <td>{{$item->JenisPelayanan}}</td>
                                             <td>
-                                                <a href="ubah-pelayanan" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
+                                                <a href="/pelayananubah/{{$item->id}}" class="btn btn-primary btn-sm">Ubah</a>
+                                                <a href="/pelayanandelete/{{$item->id}}" class="btn btn-danger btn-sm">Hapus</a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>Home Maintance</td>
-                                            <td>Keramik</td>
-                                            <td>
-                                                <a href="ubah-pelayanan" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Home Maintance</td>
-                                            <td>Dinding</td>
-                                            <td>
-                                                <a href="ubah-pelayanan" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-
+                                        @endforeach
                                         </tbody>
                                 </table>
                             </div>

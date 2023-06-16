@@ -47,7 +47,7 @@
             <div class="container-content-1">
                <div class="content-image">
                   <div class="image-border">
-                     <a href="/homemaintanance">
+                     <a href="/pesanlist/Home">
                         <img src="/assets/img/mechanic.png" alt="Description of the image">
                      </a>
                   </div>
@@ -55,7 +55,7 @@
                </div>
                <div class="content-image">
                   <div class="image-border">
-                     <a href="#">
+                     <a href="/pesanlist/build">
                         <img src="/assets/img/maintenance.png" alt="Description of the image">
                      </a>
                   </div>
@@ -63,7 +63,7 @@
                </div>
                <div class="content-image">
                   <div class="image-border">
-                     <a href="#">
+                     <a href="/pesanlist/inovation">
                         <img src="/assets/img/prototype.png" alt="Description of the image">
                      </a>
                   </div>

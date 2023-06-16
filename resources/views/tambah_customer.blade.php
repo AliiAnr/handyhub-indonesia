@@ -161,14 +161,15 @@
                         <div class="card-body">
                           <div class="card-inside">
                             <h1 class="card-title">Tambah Data Customer</h1>
-                            <form id="tambah-customer-form" enctype="multipart/form-data">
+                            <form id="tambah-customer-form" enctype="multipart/form-data" action="/customerbaru" method="POST">
+                            @csrf
                               <div class="form-group">
                                 <label for="nama">Nama:</label>
-                                <input type="text" id="nama" name="nama" class="form-control" required>
+                                <input type="text" id="nama" name="name" class="form-control" required>
                               </div>
                               <div class="form-group">
                                 <label for="nohp">No. HP:</label>
-                                <input type="text" id="nohp" name="nohp" class="form-control" required>
+                                <input type="text" id="nohp" name="No_Hp" class="form-control" required>
                               </div>
                               <div class="form-group">
                                 <label for="email">Email:</label>
@@ -184,7 +185,7 @@
                               </div>
                               <div class="form-group">
                                 <label for="kota">Kota/Kabupaten:</label>
-                                <input type="text" id="kota" name="kota" class="form-control" required>
+                                <input type="text" id="kota" name="Alamat" class="form-control" required>
                               </div>
                               <div class="form-group">
                                 <label for="kecamatan">Kecamatan:</label>
@@ -200,7 +201,7 @@
                               </div>
                               <div class="form-group">
                                 <label for="foto">Foto:</label>
-                                <input type="file" id="foto" name="foto" required>
+                                <input type="file" id="foto" name="image" required>
                               </div>
                               <button type="submit" class="btn btn-primary">Simpan</button>
                             </form>

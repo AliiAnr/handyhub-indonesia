@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Pengguna;
@@ -43,8 +44,11 @@ Route::get('/tukangriwayat', function () {
   Route::get('/admin', function () {
     return view('admin');
 });
-  Route::get('/admin-customer', function () {
-    return view('admin-customer');
+//   Route::get('/admin-customer', function () {
+//     return view('admin-customer');
+// });
+Route::get('/profilcustomer', function () {
+  return view('profilcustomer');
 });
   Route::get('/admin-riwayat', function () {
     return view('admin-riwayat');
@@ -88,13 +92,16 @@ Route::post('/registerUser',[RegisterControler::class,'newUserReg']);
 Route::post('/loginAuth',[LoginController::class,'auth']);
 Route::post('/logout',[LoginController::class,'logout'])->middleware('auth:tukang,web');
 Route::get('/userMainMenu',[penggunaController::class,'mainhome'])->middleware('auth:tukang,web');
+
+Route::get('/profilcustomer',[penggunaController::class,'profilcustomer'])->middleware('auth:web');
+
 Route::get('/profil',[penggunaController::class,'profil'])->middleware('auth:tukang,web');
 Route::post('/profil/upfoto',[profilcontroller::class,'upfoto'])->middleware('auth:tukang,web');
 Route::post('/profil/newprof/password',[profilcontroller::class,'newpassword'])->middleware('auth:tukang,web');
 Route::post('/profil/newprof/nama',[profilcontroller::class,'newnama'])->middleware('auth:tukang,web');
 Route::post('/profil/newprof/alamat',[profilcontroller::class,'newalamat'])->middleware('auth:tukang,web');
 
-Route::get('/homemaintanance',[penggunaController::class,'homemain'])->middleware('auth');
+Route::get('/pesanlist/{jenis}',[penggunaController::class,'homemain'])->middleware('auth');
 Route::get('/layanan/{id_kategori}',[penggunaController::class,'layanan'])->middleware('auth');
 Route::post('/pesananbaru/{id_kategori}',[PesananController::class,'reqpesananbaru'])->middleware('auth');
 Route::get('/listpesanan',[penggunaController::class,'listPesanan'])->middleware('auth');
@@ -103,5 +110,30 @@ Route::get('/pesanan/{id_pesanan}',[PesananController::class,'lihatpesanan'])->m
 Route::get('/bantuan',[penggunaController::class,'bantuan'])->middleware('auth');
 
 Route::get('/tukang',[TukangController::class,'onsignin'])->middleware('auth:tukang');
-Route::post('/accpesanan/{id_pesanan}/{id_tukang}',[PesananController::class,'accpesanan'])->middleware('auth:tukang');
-Route::get('/tukangriwayat',[TukangController::class,'riwayat'])->middleware('auth:tukang');
+Route::post('/accpesanan/{id_pesanan}',[PesananController::class,'accpesanan'])->middleware('auth:tukang');
+Route::get('/riwayatukang',[TukangController::class,'riwayat'])->middleware('auth:tukang');
+
+Route::post('/pesananselese/{id_pesanan}',[PesananController::class,'selese'])->middleware('auth:tukang,web');
+
+Route::get('/admin-customer',[AdminController::class,'cslist']);
+Route::get('/tambahcustomer',[AdminController::class,'tambahcs']);
+Route::post('/customerbaru',[AdminController::class,'customerbaru']);
+Route::get('/customerdelete/{id_customer}',[AdminController::class,'deletecs']);
+Route::get('/customerubah/{id_customer}',[AdminController::class,'ubahcs']);
+Route::post('/customerchanged/{id_customer}',[AdminController::class,'changed']);
+
+Route::get('/admin-tukang',[AdminController::class,'tklist']);
+Route::get('/tambahtukang',[AdminController::class,'tambahtk']);
+Route::post('/tukangbaru',[AdminController::class,'tukangbaru']);
+Route::get('/tukangdelete/{id_tukang}',[AdminController::class,'deletetk']);
+Route::get('/tukangubah/{id_tukang}',[AdminController::class,'ubahtk']);
+Route::post('/tukangchanged/{id_tukang}',[AdminController::class,'changedtk']);
+
+Route::get('/pelayanan',[AdminController::class,'plist']);
+Route::get('/pelayanandelete/{id_pelayanan}',[AdminController::class,'deletep']);
+Route::get('/pelayananubah/{id_pelayanan}',[AdminController::class,'ubahp']);
+Route::post('/pelayananbaru',[AdminController::class,'pelayananbaru']);
+Route::post('/pelayananchanged/{id_pelayanan}',[AdminController::class,'changedp']);
+
+Route::get('/admin-riwayat',[AdminController::class,'rlist']);
+Route::get('/riwayatdelete/{id_riwayat}',[AdminController::class,'deleter']);

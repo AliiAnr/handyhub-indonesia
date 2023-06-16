@@ -16,7 +16,12 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('No_Hp');
             $table->string('Alamat')->nullable();
+            $table->string('provinsi')->nullable();
+            $table->string('kecamatan')->nullable();
+            $table->string('kodepos')->nullable();
+            $table->string('jalan')->nullable();
             $table->string('ProfilPic')->nullable();
             $table->timestamps();
         });

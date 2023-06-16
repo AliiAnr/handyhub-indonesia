@@ -10,6 +10,7 @@ class RegisterControler extends Controller
 {   
     public function newUserReg(Request $request){
         $validatedData = $request->validate([
+            'No_Hp'=>'required',
             'name' => 'required|max:255',
             'email' => 'required|email:dns|unique:penggunas',
             'password'=>'required|min:6'

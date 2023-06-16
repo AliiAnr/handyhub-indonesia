@@ -26,7 +26,7 @@ class TukangController extends Controller
         $list = pesanan::where('id_tukang', $tukang->id)
                        ->where('status', '!=', 'blum di terima')
                        ->get();
-        return view('/tukangriwayat',[
+        return view('/ListRiwayatTukang',[
             'list' =>$list
         ]);
     }

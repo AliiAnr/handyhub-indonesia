@@ -24,11 +24,11 @@
          </div>
          <div class="btn-middle">
             <ul class="ul-nav">
-             <li class="li-nav scroll-link"><a class="a-nav" href="#services">Pesanan</a></li>
+             <li class="li-nav scroll-link"><a class="a-nav" href="/tukang">Pesanan</a></li>
              <li class="li-nav scroll-link">
                <button id="activationButton" class="unactive">Aktivasi</button>
              </li>
-             <li class="li-nav scroll-link"><a class="a-nav" href="#blog">Riwayat</a></li>
+             <li class="li-nav scroll-link"><a class="a-nav" href="/riwayatukang">Riwayat</a></li>
             </ul>
          </div>
          <div class="btn-profile">

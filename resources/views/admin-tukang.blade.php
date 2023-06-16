@@ -129,7 +129,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="assets/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -181,210 +181,20 @@
                                             <th>Foto</th>
                                             <th>Aksi</th>
                                         </tr>
+                                        @foreach($user as $item)
                                         <tr>
-                                            <td>Ali An Nuur</td>
-                                            <td>20</td>
-                                            <td>081397757384</td>
-                                            <td>Mataram</td>
-                                            <td>2023/01/01</td>
-                                            <td><img src="undraw_profile.svg"></td>
+                                            <td>{{$item->name}}</td>
+                                            <td>{{$item->age}}</td>
+                                            <td>{{$item->No_Hp}}</td>
+                                            <td>{{$item->Alamat}}</td>
+                                            <td>{{$item->created_at}}</td>
+                                            <td><img src="storage\{{$item->ProfilPic}}"></td>
                                             <td>
-                                                <a href="/ubah-tukang" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
+                                                <a href="/tukangubah/{{$item->id}}" class="btn btn-primary btn-sm">Ubah</a>
+                                                <a href="/tukangdelete/{{$item->id}}" class="btn btn-danger btn-sm">Hapus</a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>Baiq Ratna Askit</td>
-                                            <td>20</td>
-                                            <td>081990210895</td>
-                                            <td>Mataram</td>
-                                            <td>2023/01/01</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="/ubah-tukang" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Muhammad Fahir</td>
-                                            <td>20</td>
-                                            <td>086294613682</td>
-                                            <td>Mataram</td>
-                                            <td>2023/01/01</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="/ubah-tukang" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Baiq Ratna Askit</td>
-                                            <td>20</td>
-                                            <td>081990210895</td>
-                                            <td>Mataram</td>
-                                            <td>2023/01/01</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="/ubah-tukang" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Muhammad Fahir</td>
-                                            <td>20</td>
-                                            <td>086294613682</td>
-                                            <td>Mataram</td>
-                                            <td>2023/01/01</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="/ubah-tukang" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Baiq Ratna Askit</td>
-                                            <td>20</td>
-                                            <td>081990210895</td>
-                                            <td>Mataram</td>
-                                            <td>2023/01/01</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="/ubah-tukang" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Muhammad Fahir</td>
-                                            <td>20</td>
-                                            <td>086294613682</td>
-                                            <td>Mataram</td>
-                                            <td>2023/01/01</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="/ubah-tukang" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Baiq Ratna Askit</td>
-                                            <td>20</td>
-                                            <td>081990210895</td>
-                                            <td>Mataram</td>
-                                            <td>2023/01/01</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="/ubah-tukang" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Muhammad Fahir</td>
-                                            <td>20</td>
-                                            <td>086294613682</td>
-                                            <td>Mataram</td>
-                                            <td>2023/01/01</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="/ubah-tukang" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Baiq Ratna Askit</td>
-                                            <td>20</td>
-                                            <td>081990210895</td>
-                                            <td>Mataram</td>
-                                            <td>2023/01/01</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="/ubah-tukang" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Muhammad Fahir</td>
-                                            <td>20</td>
-                                            <td>086294613682</td>
-                                            <td>Mataram</td>
-                                            <td>2023/01/01</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="/ubah-tukang" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Baiq Ratna Askit</td>
-                                            <td>20</td>
-                                            <td>081990210895</td>
-                                            <td>Mataram</td>
-                                            <td>2023/01/01</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="/ubah-tukang" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Muhammad Fahir</td>
-                                            <td>20</td>
-                                            <td>086294613682</td>
-                                            <td>Mataram</td>
-                                            <td>2023/01/01</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="/ubah-tukang" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Baiq Ratna Askit</td>
-                                            <td>20</td>
-                                            <td>081990210895</td>
-                                            <td>Mataram</td>
-                                            <td>2023/01/01</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="/ubah-tukang" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Muhammad Fahir</td>
-                                            <td>20</td>
-                                            <td>086294613682</td>
-                                            <td>Mataram</td>
-                                            <td>2023/01/01</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="/ubah-tukang" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Baiq Ratna Askit</td>
-                                            <td>20</td>
-                                            <td>081990210895</td>
-                                            <td>Mataram</td>
-                                            <td>2023/01/01</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="/ubah-tukang" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Muhammad Fahir</td>
-                                            <td>20</td>
-                                            <td>086294613682</td>
-                                            <td>Mataram</td>
-                                            <td>2023/01/01</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="/ubah-tukang" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                         </tbody>
                                 </table>
                             </div>

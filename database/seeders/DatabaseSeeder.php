@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         
         pengguna::create([
             'name'=>'fahir',
+            'No_Hp'=>'081123456790',
             'email'=>'popemilus@gmail.com',
             'password'=>bcrypt('asdasd')
         ]);
@@ -33,30 +34,37 @@ class DatabaseSeeder extends Seeder
         kategori::insert([[
             'Foto'=>'assets\img\front-door-open.jpg',
             'JenisPelayanan'=>'Alumunium & Kaca',
+            'Kategori' =>'Home Maintenance'
         ],
         [
             'Foto'=>'assets/img/tips-image-2.jpg',
             'JenisPelayanan'=>'Atap',
+            'Kategori' =>'Home Maintenance'
         ],
         [
             'Foto'=>'assets/img/tips-image-2.jpg',
             'JenisPelayanan'=>'Bor Sumur & Pompa',
+            'Kategori' =>'Home Maintenance'
         ],
         [
             'Foto'=>'assets/img/tips-image-2.jpg',
             'JenisPelayanan'=>'Cat',
+            'Kategori' =>'Home Maintenance'
         ],
         [
             'Foto'=>'assets/img/tips-image-2.jpg',
             'JenisPelayanan'=>'Dinding',
+            'Kategori' =>'Home Maintenance'
         ],
         [
             'Foto'=>'assets/img/tips-image-2.jpg',
             'JenisPelayanan'=>'Keramik',
+            'Kategori' =>'Home Maintenance'
         ],
         [
             'Foto'=>'assets/img/tips-image-2.jpg',
             'JenisPelayanan'=>'Pipa Air & Tanki Air',
+            'Kategori' =>'Home Maintenance'
         ]]);
         // \App\Models\User::factory(10)->create();
 

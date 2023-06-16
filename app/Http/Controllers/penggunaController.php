@@ -22,9 +22,19 @@ class penggunaController extends Controller
         ]);
     }
     
-    public function homemain(){
+    public function homemain($jenis){
+        if ($jenis === 'Home') {
+            $jenis = 'Home Maintenance';
+        } elseif ($jenis === 'build') {
+            $jenis = 'Build and Renovate';
+        } else {
+            $jenis = 'Design Inspiration';
+        }
+        $rows = kategori::where('Kategori', $jenis)->get();
         return view('home_maintance',[
-            'kategori' => kategori::all()
+            'kategori' => $rows,
+            'jenis'=>$jenis
+
         ]);
     }
     public function listPesanan(){
@@ -63,7 +73,13 @@ class penggunaController extends Controller
         return view('/');
     }
     public function profil(){
-        return view('profil');
+        return view('profil');  
+    }
+    public function profilcustomer(){
+        $pengguna = pengguna::find( Auth::id());
+        return view('profilcustomer',[
+            'pengguna' => $pengguna
+        ]);
     }
 
 }

@@ -129,7 +129,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="assets/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -183,105 +183,19 @@
                                             <th>Foto</th>
                                             <th>Aksi</th>
                                         </tr>
+                                        @foreach($user as $item)
                                         <tr>
-                                            <td>Ali An Nuur</td>
-                                            <td>Mataram</td>
-                                            <td>081397757384</td>
-                                            <td>alinr@gmail.com</td>
-                                            <td><img src="undraw_profile.svg"></td>
+                                            <td>{{$item->name}}</td>
+                                            <td>{{$item->Alamat}}</td>
+                                            <td>{{$item->No_Hp}}</td>
+                                            <td>{{$item->email}}</td>
+                                            <td><img src="storage\{{$item->ProfilPic}}"></td>
                                             <td>
-                                                <a href="ubah-customer" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
+                                                <a href="/customerubah/{{$item->id}}" class="btn btn-primary btn-sm">Ubah</a>
+                                                <a href="/customerdelete/{{$item->id}}" class="btn btn-danger btn-sm">Hapus</a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>Baiq Ratna Askit</td>
-                                            <td>Mataram</td>
-                                            <td>081990210895</td>
-                                            <td>ratnaa@gmail.com</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="ubah-customer" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Muhammad Fahir</td>
-                                            <td>Mataram</td>
-                                            <td>086294613682</td>
-                                            <td>mfahir@gmail.com</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="ubah-customer" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ali An Nuur</td>
-                                            <td>Mataram</td>
-                                            <td>081397757384</td>
-                                            <td>alinr@gmail.com</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="ubah-customer" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Baiq Ratna Askit</td>
-                                            <td>Mataram</td>
-                                            <td>081990210895</td>
-                                            <td>ratnaa@gmail.com</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="ubah-customer" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Muhammad Fahir</td>
-                                            <td>Mataram</td>
-                                            <td>086294613682</td>
-                                            <td>mfahir@gmail.com</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="ubah-customer" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ali An Nuur</td>
-                                            <td>Mataram</td>
-                                            <td>081397757384</td>
-                                            <td>alinr@gmail.com</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="ubah-customer" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Baiq Ratna Askit</td>
-                                            <td>Mataram</td>
-                                            <td>081990210895</td>
-                                            <td>ratnaa@gmail.com</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="ubah-customer" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Muhammad Fahir</td>
-                                            <td>Mataram</td>
-                                            <td>086294613682</td>
-                                            <td>mfahir@gmail.com</td>
-                                            <td><img src="undraw_profile.svg"></td>
-                                            <td>
-                                                <a href="ubah-customer" class="btn btn-primary btn-sm">Ubah</a>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                         </tbody>
                                 </table>
                             </div>
