@@ -18,6 +18,11 @@ return new class extends Migration
             $table->string('password');
             $table->string('No_Hp');
             $table->string('Alamat');
+            $table->date('tgl_lahir')->nullable();
+            $table->string('provinsi')->nullable();
+            $table->string('kecamatan')->nullable();
+            $table->string('kodepos')->nullable();
+            $table->string('jalan')->nullable();
             $table->string('ProfilPic')->nullable();
             $table->timestamps();
         });

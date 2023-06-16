@@ -32,22 +32,41 @@ class PesananController extends Controller
     public function lihatpesanan($id){
         $id_pesanan = pesanan::find($id);
         $pengguna = Pengguna::find($id_pesanan->id_customer);
+        $isend = 'Sudah Selesai';
         $alamat = $pengguna->Alamat;
         $tukang = tukang::find($id_pesanan->id_tukang);
+        $pemesan = pengguna::find($id_pesanan->id_customer);
         return view('pesanan', [    
+            'is'=> $isend,
             'pesanan' => $id_pesanan,
             'alamat'=>$alamat,
+            'pemesan'=>$pemesan,
             'tukang'=>$tukang
         ]);
     }
     
-    public function accpesanan($id_pesan,$id_tukang){
-        $id_pesanan = pesanan::find($id_pesan);
-        $tukang = tukang::find($id_tukang);
-        pesanan::where('id', $id_pesanan)->update([
+    public function accpesanan($id_pesan){
+        $tukang = tukang::find(auth()->user()->id);
+        pesanan::where('id', $id_pesan)->update([
             'status' =>'Konfirmasi Diterima',
             'id_tukang' => $tukang->id,
         ]);
-        return redirect('/tukangriwayat');
+        return redirect('/riwayatukang');
+    }
+
+    public function selese($id_pesan){
+        pesanan::where('id', $id_pesan)->update([
+            'status' =>'Sudah Selesai',
+        ]);
+        $pesanan = pesanan::find($id_pesan);
+        $end = $pesanan->updated_at;
+        pesanan::where('id', $id_pesan)->update([
+            'waktu_end' => $end,
+        ]);
+        if(Auth::guard('tukang')->check()){
+            return redirect('/riwayatukang');
+        }else{
+            return redirect('/Listriwayat');    
+        }
     }
 }

@@ -17,7 +17,7 @@
             <div class="pic-logo-handyhub">
                <div class="logo">
                   <a href="/">
-                     <img src="assets/img/start-renovation.png" alt="logo">
+                     <img src="/assets/img/start-renovation.png" alt="logo">
                   </a>
                </div>
                <h1 class="text-logo">HandyHub</h1>
@@ -46,7 +46,7 @@
       </div>
       <div class="container-content-2">
          <div class="title-service">
-            <h3>BANGUNAN</h3>
+            <h3>{{$jenis}}</h3>
          </div>
       </div>
       <div class="container-content-3">

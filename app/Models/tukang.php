@@ -10,7 +10,9 @@ use Illuminate\Database\Eloquent\Model;
 class tukang extends Authenticatable
 {
     use HasFactory;
-    
+    protected $casts = [
+        'tgl_lahir' => 'date', // or 'datetime' depending on your column type
+    ];
     public function getTable()
     {
         return 'tukangs';

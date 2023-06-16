@@ -15,6 +15,7 @@ class pengguna extends Authenticatable
     //     'email',
     //     'password'
     // ];
+    protected $table = 'penggunas';
     public function getTable()
     {
         return 'penggunas';

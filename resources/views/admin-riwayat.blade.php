@@ -129,7 +129,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="assets/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -173,19 +173,21 @@
                                             <th>Lampiran Foto</th>
                                             <th>Aksi</th>
                                         </tr>
+                                        @foreach($pesanan as $item)
                                         <tr>
-                                            <td>Home Maintance</td>
-                                            <td>Alumunium & Kaca</td>
-                                            <td>AskitKit</td>
-                                            <td>Korea</td>
-                                            <td>2023-06-02 10:00 AM</td>
-                                            <td>2023-06-04 09:00 AM</td>
-                                            <td class="more-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur adipisci deleniti tempora voluptas commodi doloremque id totam non? Aspernatur officiis est, eligendi iure provident dolorem neque facilis libero, qui eos, quasi a. Distinctio veritatis quae ad esse fugit dolore inventore, dignissimos tempora. Eius dolor incidunt excepturi ducimus labore blanditiis iste.</td>        
-                                            <td><img src="undraw_profile.svg"></td>
+                                            <td>{{$item->jenis}}</td>
+                                            <td>{{$item->jenisp}}</td>
+                                            <td>{{$item->namap}}</td>
+                                            <td>{{$item->alamat}}</td>
+                                            <td>{{$item->waktu}}</td>
+                                            <td>{{$item->waktu_end}}</td>
+                                            <td class="more-text">{{$item->pesan}}</td>        
+                                            <td><img src="storage\{{$item->Foto}}"></td>
                                             <td>
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
+                                            <a href="/riwayatdelete/{{$item->id}}" class="btn btn-danger btn-sm">Hapus</a>
                                             </td>
                                         </tr>
+                                        @endforeach
                                         </tbody>
                                 </table>
                             </div>

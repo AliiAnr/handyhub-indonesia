@@ -445,6 +445,10 @@
                <input placeholder="Enter your name" name="name" required="required"/>
                <i class="uil uil-envelope-alt name"></i>
                </div>
+               <div class="input_box">
+               <input placeholder="Enter your phone number" name="No_Hp" required="required"/>
+               <i class="uil uil-envelope-alt name"></i>
+               </div>
                @error('email')
                   <div class="invalid-feedback"> Email Sudah Digunakan </div>
                @enderror

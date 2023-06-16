@@ -161,20 +161,25 @@
                      <div class="card-body">
                        <div class="card-inside">
                          <h1 class="card-title">Ubah Data Pelayanan</h1>
-                         <form id="tambah-customer-form" enctype="multipart/form-data">
+                         <form id="tambah-customer-form" enctype="multipart/form-data"action="/pelayananchanged/{{$id}}" method="POST">
+                            @csrf
                            <div class="form-group">
                              <label for="pelayanan">Pelayanan:</label>
-                             <select id="pelayanan" name="pelayanan" class="form-control" required>
+                             <select id="pelayanan" name="Kategori" class="form-control">
                                <option value="">Pilih Pelayanan</option>
-                               <option value="Pelayanan A">Pelayanan A</option>
-                               <option value="Pelayanan B">Pelayanan B</option>
-                               <option value="Pelayanan C">Pelayanan C</option>
+                               <option value="Home Maintenance">Home Maintenance</option>
+                               <option value="Build and Renovate">Build and Renovate</option>
+                               <option value="Design Inspiration">Design Inspiration</option>
                              </select>
                            </div>
                            <div class="form-group">
                              <label for="kategori">Kategori:</label>
-                             <input type="text" id="kategori" name="kategori" class="form-control" required>
+                             <input type="text" id="kategori" name="JenisPelayanan" class="form-control">
                            </div>
+                           <div class="form-group">
+                                <label for="foto">Foto:</label>
+                                <input type="file" id="foto" name="image">
+                            </div>
                            <button type="submit" class="btn btn-primary">Simpan</button>
                          </form>
                        </div>

@@ -161,50 +161,51 @@
                         <div class="card-body">
                           <div class="card-inside">
                             <h1 class="card-title">Ubah Data Tukang</h1>
-                            <form id="tambah-customer-form" enctype="multipart/form-data">
+                            <form id="tambah-customer-form" enctype="multipart/form-data" action="/tukangchanged/{{$id}}" method="POST"/tukangchanged/{id_tukang}>
+                            @csrf  
                               <div class="form-group">
                                 <label for="nama">Nama:</label>
-                                <input type="text" id="nama" name="nama" class="form-control" required>
+                                <input type="text" id="nama" name="name" class="form-control">
                               </div>
                               <div class="form-group">
                                 <label for="nohp">No. HP:</label>
-                                <input type="text" id="nohp" name="nohp" class="form-control" required>
+                                <input type="text" id="nohp" name="No_Hp" class="form-control">
                               </div>
                               <div class="form-group">
                                 <label for="tgl_lahir">Tanggal Lahir:</label>
-                                <input type="date" id="tgl_lahir" name="tgl_lahir" class="form-control" required>
+                                <input type="date" id="tgl_lahir" name="tgl_lahir" class="form-control">
                               </div>
                               <div class="form-group">
                                 <label for="email">Email:</label>
-                                <input type="email" id="email" name="email" class="form-control" required>
+                                <input type="email" id="email" name="email" class="form-control">
                               </div>
                               <div class="form-group">
                                 <label for="password">Password:</label>
-                                <input type="password" id="password" name="password" class="form-control" required>
+                                <input type="password" id="password" name="password" class="form-control">
                               </div>
                               <div class="form-group">
                                 <label for="provinsi">Provinsi:</label>
-                                <input type="text" id="provinsi" name="provinsi" class="form-control" required>
+                                <input type="text" id="provinsi" name="provinsi" class="form-control">
                               </div>
                               <div class="form-group">
                                 <label for="kota">Kota/Kabupaten:</label>
-                                <input type="text" id="kota" name="kota" class="form-control" required>
+                                <input type="text" id="kota" name="Alamat" class="form-control">
                               </div>
                               <div class="form-group">
                                 <label for="kecamatan">Kecamatan:</label>
-                                <input type="text" id="kecamatan" name="kecamatan" class="form-control" required>
+                                <input type="text" id="kecamatan" name="kecamatan" class="form-control">
                               </div>
                               <div class="form-group">
                                 <label for="kodepos">Kode Pos:</label>
-                                <input type="text" id="kodepos" name="kodepos" class="form-control" required>
+                                <input type="text" id="kodepos" name="kodepos" class="form-control">
                               </div>
                               <div class="form-group">
                                 <label for="jalan">Nama Jalan:</label>
-                                <input type="text" id="jalan" name="jalan" class="form-control" required>
+                                <input type="text" id="jalan" name="jalan" class="form-control">
                               </div>
                               <div class="form-group">
                                 <label for="foto">Foto:</label>
-                                <input type="file" id="foto" name="foto" required>
+                                <input type="file" id="foto" name="image">
                               </div>
                               <button type="submit" class="btn btn-primary">Simpan</button>
                             </form>
