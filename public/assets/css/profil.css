@@ -8,6 +8,9 @@ li {
 
 .text-logo {
     display: block;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .container-fluid {
@@ -28,7 +31,7 @@ li {
 
 .log-sign-up {
     display: flex;
-    justify-content:flex-end;
+    justify-content: flex-end;
     align-items: center;
     width: 280px;
 }
@@ -92,46 +95,76 @@ li {
 
 /* NAVIGATION-ENDS */
 body {
-    background: rgb(99, 39, 120)
+    background: rgb(99, 39, 120);
 }
 
 .form-control:focus {
     box-shadow: none;
-    border-color: #BA68C8
+    border-color: #ba68c8;
 }
 
 .profile-button {
     background: rgb(99, 39, 120);
     box-shadow: none;
-    border: none
+    border: none;
 }
 
 .profile-button:hover {
-    background: #682773
+    background: #682773;
 }
 
 .profile-button:focus {
     background: #682773;
-    box-shadow: none
+    box-shadow: none;
 }
 
 .profile-button:active {
     background: #682773;
-    box-shadow: none
+    box-shadow: none;
 }
 
 .back:hover {
     color: #682773;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .labels {
-    font-size: 11px
+    font-size: 11px;
 }
 
 .add-experience:hover {
-    background: #BA68C8;
+    background: #ba68c8;
     color: #fff;
     cursor: pointer;
-    border: solid 1px #BA68C8
+    border: solid 1px #ba68c8;
+}
+
+.kelas {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-group2 {
+    margin-bottom: 10px;
+    height: 500px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form-control {
+    height: 40px;
+    border-radius: 5px;
+}
+
+.btn {
+    height: 40px;
+    border-radius: 5px;
+}
+
+.input-profile{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 700px;
 }
