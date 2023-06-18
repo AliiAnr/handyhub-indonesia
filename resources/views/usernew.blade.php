@@ -236,7 +236,7 @@
       {{-- BACK-COLOR-START --}}
       <div class="back-color">
          <div class="gradient-color">
-            <h2 class="username-user">Hi, name</h2>
+            <h2 class="username-user">Hi, {{$userid->name}}</h2>
             <p class="back-text">
                Pilih layanan yang sesuai dengan kebutuhan
             </p>

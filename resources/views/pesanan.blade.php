@@ -82,6 +82,14 @@
       <div class="user-page">
          <div class="content">
             <div class="note">
+               <h2>Jenis Pelayanan</h2>
+               <p>{{$kategori->Kategori}}</p>
+            </div>
+            <div class="note">
+               <h2>Kategori</h2>
+               <p>{{$kategori->JenisPelayanan}}</p>
+            </div>
+            <div class="note">
                <h2>Catatan Tambahan</h2>
                <p>{{$pesanan->pesan}}</p>
             </div>
@@ -94,8 +102,28 @@
                <p>{{$pesanan->waktu}} - {{$pesanan->waktu_end}} </p>
             </div>
             <div class="address">
-               <h2>Alamat</h2>
-               <p>{{$alamat}}</p>
+               <div class="user-add">        
+                  <h2>Alamat</h2>
+                  <p>{{$alamat}}</p>
+               </div>
+               <div class="btn-user">
+               <form id="profileForm">
+                  <input type="hidden" id="province" value="{{$pemesan->provinsi}}" required>
+
+                 
+                  <input type="hidden" id="city" value="{{$pemesan->Alamat}}" required>
+
+
+                  <input type="hidden" id="district" value="{{$pemesan->kecamatan}}" required>
+
+
+                  <input type="hidden" id="postalCode" value="{{$pemesan->kodepos}}" required>
+
+                  <input type="hidden" id="street" value="{{$pemesan->jalan}}" required>
+
+                  <button class = "btn-content-confirmation-2" type="submit">Cari Lokasi di Google Maps</button>
+               </form>
+               </div>
             </div>
             <div class="btn-confirmation">
                
@@ -113,6 +141,10 @@
                         <span>Check Selesai</span>
                      </button>
                      </form>
+                     @else
+                     <button class="btn-content-confirmation-2">
+                        <span>Check Selesai</span>
+                     </button>
                      @endif 
                      @if (Auth::guard('tukang')->check())
                      <button class="btn-content-confirmation-2" onclick="openPopup4tukang()">
@@ -155,15 +187,19 @@
                   <div class="popup-inner">
                      <span class="close" onclick="closePopup4tukang()">&times;</span>
                      <div class="tukang-info">
-                        <img src="\storage\{{$pemesan->ProfilPic}}" alt="Foto TukanK">
+                        <img src="\storage\{{$pemesan->ProfilPic}}" alt="Foto Pemesan">
                         <div class="Pemesan-detail">
                            <h4>Nama Pemesan :</h4>
                            <div class="box-label">
                               <p>{{$pemesan->name}}</p>
                            </div>
+                           <h4>Nomor HP Pemesan :</h4>
+                           <div class="box-label">
+                              <p>{{$pemesan->No_Hp}}</p>
+                           </div>
                            <h4>Alamat Pemesan :</h4>
                            <div class="box-label">
-                              <p>{{$pemesan->Alamat}}</p>
+                              <p>{{$pemesan->jalan .', ' .$pemesan->kodepos  .', ' . $pemesan->kecamatan .', ' . $pemesan->Alamat .', ' . $pemesan->provinsi}}</p>
                            </div>
                         </div>
                      </div>
@@ -185,7 +221,7 @@
                            </div>
                            <h4>Alamat Tukang :</h4>
                            <div class="box-label">
-                              <p>{{$tukang->Alamat}}</p>
+                              <p>{{$tukang->jalan .', ' .$tukang->kodepos  .', ' . $tukang->kecamatan .', ' . $tukang->Alamat .', ' . $tukang->provinsi}}</p>
                            </div>
                            <h4>Nomor HP Tukang :</h4>
                            <div class="box-label">
@@ -200,5 +236,26 @@
          </div>
       </div>
    </div>
+   <script>
+    document.getElementById('profileForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      // Mengambil nilai dari input form
+      const province = document.getElementById('province').value;
+      const city = document.getElementById('city').value;
+      const district = document.getElementById('district').value;
+      const postalCode = document.getElementById('postalCode').value;
+      const street = document.getElementById('street').value;
+
+      // Menggabungkan alamat menjadi satu string
+      const address = `${street}, ${district}, ${city}, ${province}, ${postalCode}`;
+
+      // Membangun URL untuk membuka Google Maps
+      const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+
+      // Mengarahkan pengguna ke Google Maps
+      window.location.href = mapsUrl;
+    });
+  </script>
 </body>
 </html>

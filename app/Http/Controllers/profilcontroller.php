@@ -16,68 +16,51 @@ class profilcontroller extends Controller
         $validate = $request->validate([
             'image' => 'image'
         ]);
-        if($request->file('image')){
-            $validate['image'] = $request->file('image')->store('fotoprofil');
+        
+        if(isset($validate['image'])){
+            if($request->file('image')){
+                $validate['image'] = $request->file('image')->store('fotoprofil');
+    
+            }
+            if (Auth::guard('tukang')->check()){
+                $ison = tukang::find(auth()->user()->id);
+            }else{
+                $ison = pengguna::find(auth()->user()->id);
+            }
+            
+            $ison->ProfilPic = $validate['image'];
+            $ison->save();
+            return redirect('profil');
+        }else{
+            if (Auth::guard('tukang')->check()){
+                $ison = tukang::find(auth()->user()->id);
+            }else{
+                $ison = pengguna::find(auth()->user()->id);
+            }
+            $ison->ProfilPic = NULL;
+            $ison->save();
+            return redirect('profil');
+            
+        }
 
-        }
-        if (Auth::guard('tukang')->check()){
-            $ison = tukang::find(auth()->user()->id);
-        }else{
-            $ison = pengguna::find(auth()->user()->id);
-        }
-        
-        $ison->ProfilPic = $validate['image'];
-        $ison->save();
-        return redirect('profil');
     }
-    public function newpassword(Request $request)
-    {   
+    public function changed(Request $request){
+        $validatedData = $request->validate([
+            'jalan' => 'nullable',
+            'kodepos' => 'nullable',
+            'Alamat' => 'nullable',
+            'kecamatan' => 'nullable',
+            'provinsi' => 'nullable',
+            'No_Hp' => 'nullable',
+            'name' => 'nullable',
+            'password'=> 'nullable'
+        ]);
         
-        $validate = $request->validate([
-            'password' => 'required|min:6'
-        ]);
-    
-        if (Auth::guard('tukang')->check()){
-            $ison = tukang::find(auth()->user()->id);
-        }else{
-            $ison = pengguna::find(auth()->user()->id);
+        if ($validatedData['password'] !== null) {
+            $validatedData['password'] = bcrypt($validatedData['password']);
         }
-        $ison->password = bcrypt($validate['password']);
-        $ison->save();
-    
-        return redirect('profil');
-    }
-    public function newnama(Request $request)
-    {   
-        $validate = $request->validate([
-            'nama' => 'required|min:3'
-        ]);
-    
-        if (Auth::guard('tukang')->check()){
-            $ison = tukang::find(auth()->user()->id);
-        }else{
-            $ison = pengguna::find(auth()->user()->id);
-        }
-        $ison->name = $validate['nama'];
-        $ison->save();
-    
-        return redirect('profil');
-    }
-    public function newalamat(Request $request)
-    {   
-        
-        $validate = $request->validate([
-            'alamat' => 'required|min:2'
-        ]);
-    
-        if (Auth::guard('tukang')->check()){
-            $ison = tukang::find(auth()->user()->id);
-        }else{
-            $ison = pengguna::find(auth()->user()->id);
-        }
-        $ison->Alamat = $validate['alamat'];
-        $ison->save();
-    
-        return redirect('profil');
+        $pengguna = pengguna::find(auth()->user()->id);
+        $pengguna->update(array_filter($validatedData));
+        return redirect('/profil');
     }
 }

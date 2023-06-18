@@ -120,6 +120,35 @@ html,
 
 /* BUTTON-PROFILE-ENDS */
 
+.container-unknown-content {
+   padding-top: 160px;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background-size: cover;
+}
+
+.btn-unknown-value {
+   width: 470px;
+   height: 520px;
+   display: flex;
+   justify-content: flex-end;
+   flex-direction: column;
+   background-repeat: no-repeat;
+   margin-bottom: 30px;
+   background-image: url('/assets/img/choices.png');
+  font-family: "Wix Madefor Display", sans-serif;
+   
+}
+
+.btn-unknown-value span{
+  border-radius: 10px;
+  background-color: rgb(188, 188, 188);
+}
+
 /* CONTAINER-MAIN-CONTENT-START */
 
 .container-main-content {

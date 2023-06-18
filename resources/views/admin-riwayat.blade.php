@@ -167,6 +167,7 @@
                                             <th>Kategori</th>
                                             <th>Nama</th>
                                             <th>Alamat</th>
+                                            <th>Status</th>
                                             <th>Waktu Kunjungan</th>
                                             <th>Waktu Selesai</th>
                                             <th>Catatan Tambahan</th>
@@ -179,10 +180,11 @@
                                             <td>{{$item->jenisp}}</td>
                                             <td>{{$item->namap}}</td>
                                             <td>{{$item->alamat}}</td>
+                                            <td>{{$item->status}}</td>
                                             <td>{{$item->waktu}}</td>
                                             <td>{{$item->waktu_end}}</td>
                                             <td class="more-text">{{$item->pesan}}</td>        
-                                            <td><img src="storage\{{$item->Foto}}"></td>
+                                            <td><a href="storage\{{$item->Foto}}">Foto</a></td> 
                                             <td>
                                             <a href="/riwayatdelete/{{$item->id}}" class="btn btn-danger btn-sm">Hapus</a>
                                             </td>

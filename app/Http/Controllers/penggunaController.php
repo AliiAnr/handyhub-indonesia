@@ -73,7 +73,14 @@ class penggunaController extends Controller
         return view('/');
     }
     public function profil(){
-        return view('profil');  
+        if(Auth::guard('tukang')->check()){
+            $user = tukang::find(auth()->user()->id);
+        }else{
+            $user = pengguna::find(auth()->user()->id);
+        }
+        return view('profil',[
+            'user' => $user
+        ]);  
     }
     public function profilcustomer(){
         $pengguna = pengguna::find( Auth::id());

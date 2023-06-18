@@ -8,6 +8,7 @@ use App\Models\pengguna;
 use Illuminate\Http\Request;
 use App\Http\Requests\StorepesananRequest;
 use App\Http\Requests\UpdatepesananRequest;
+use App\Models\kategori;
 use App\Models\tukang;
 
 class PesananController extends Controller
@@ -33,13 +34,15 @@ class PesananController extends Controller
         $id_pesanan = pesanan::find($id);
         $pengguna = Pengguna::find($id_pesanan->id_customer);
         $isend = 'Sudah Selesai';
-        $alamat = $pengguna->Alamat;
+        $alamat = $pengguna->jalan .', ' .$pengguna->kodepos  .', ' . $pengguna->kecamatan .', ' . $pengguna->Alamat .', ' . $pengguna->provinsi;
         $tukang = tukang::find($id_pesanan->id_tukang);
+        $kategori = kategori::find($id_pesanan->id_kategori);
         $pemesan = pengguna::find($id_pesanan->id_customer);
         return view('pesanan', [    
             'is'=> $isend,
             'pesanan' => $id_pesanan,
             'alamat'=>$alamat,
+            'kategori'=>$kategori,
             'pemesan'=>$pemesan,
             'tukang'=>$tukang
         ]);
