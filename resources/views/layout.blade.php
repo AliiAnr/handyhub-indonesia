@@ -71,7 +71,9 @@
                </a>
                @endauth
                </div>
-               {{ auth()->guard('tukang')->user()->name }}
+               <div class="user-name">
+                  <p>{{ auth()->guard('tukang')->user()->name }}</p>
+               </div>
             @else
                @auth
                <div class="btn-profile">
@@ -80,12 +82,15 @@
                      <img src="/assets/img/user.png" alt="" class="profil-image"> 
                   </a>
                   @else
-                  <a href="/profil">
-                     <img src="/storage/{{auth()->user()->ProfilPic}}" alt="" class="profil-image"> 
+                  <a class= "btn-sus-2" href="/profil">
+                     <img class = "profil-sus" src="/storage/{{auth()->user()->ProfilPic}}" alt="" class="profil-image"> 
                   </a>
                   @endif
                </div>
-               {{ auth()->user()->name }}
+               <div class="user-name">
+                  <p>{{ auth()->user()->name }}</p>
+
+               </div>
                @else
                   <div class="btn-login-sign">
                         <button class="btn" id="form-open">
@@ -196,7 +201,7 @@
                   </div>
                   <div class="description-item">
                      <p>
-                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.
+                        WOw, Sangat Membantu Banget Dalam Memperbaiki my Roof.
                      </p>
                   </div>
                </div>
@@ -212,7 +217,7 @@
                   </div>
                   <div class="description-item">
                      <p>
-                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been scrambled it    to make a type book.
+                        TUkang is sangat ganteng, dan ramah. Jadi ingin melakukan order terus dech,,, !!!
                      </p>
                   </div>
                </div>
@@ -228,7 +233,7 @@
                   </div>
                   <div class="description-item">
                      <p>
-                        Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been scrambled.
+                        Suka banget sama aplikasinya, sangat mudah dipahami dan diakses.
                      </p>
                   </div>
                </div>

@@ -7,7 +7,8 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Oswald:wght@200;400&family=Wix+Madefor+Display&display=swap" rel="stylesheet">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link rel="stylesheet" href="/assets/css/tukang.css">
+   <!-- <link rel="stylesheet" href="/assets/css/tukang.css"> -->
+   <link rel="stylesheet" href="/assets/css/bantuan.css">
    <title>Layanan</title>
 </head>
 <body>
@@ -25,9 +26,6 @@
          <div class="btn-middle">
             <ul class="ul-nav">
              <li class="li-nav scroll-link"><a class="a-nav" href="/tukang">Pesanan</a></li>
-             <li class="li-nav scroll-link">
-               <button id="activationButton" class="unactive">Aktivasi</button>
-             </li>
              <li class="li-nav scroll-link"><a class="a-nav" href="/riwayatukang">Riwayat</a></li>
             </ul>
          </div>
@@ -39,26 +37,17 @@
       </div>
    </nav>
    {{-- NAVIGATION-ENDS --}}
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
+
    @if($list->isEmpty())
-      {{-- CONTAINER-UNKNOWN-CONTENT-START --}}
+      <!-- {{-- CONTAINER-UNKNOWN-CONTENT-START --}} -->
       <div class="container-unknown-content">
          <div class="btn-unknown-value">
             <h1>Belum <span>terdapat pesanan</span></h1>
          </div>
       </div>
-      {{-- CONTAINER-UNKNOWN-CONTENT-ENDS --}}
+      <!-- {{-- CONTAINER-UNKNOWN-CONTENT-ENDS --}} -->
    @else
-      @foreach($list as $key => $item)
+      <!-- @foreach($list as $key => $item)
          <div class="listpesanan-item">
             <a href="/pesanan/{{$item->id}}" class="">
                <h4>{{$listname[$key]->name." ".$item->status}}</h4>
@@ -66,7 +55,26 @@
             </a>
          </div>
          <br>
-      @endforeach
+      @endforeach -->
+      <div class="container-main-content">
+            <div class="container-content-1">
+            @foreach($list as $key => $item)
+               <div class="container-item">
+                  <a href="/pesanan/{{$item->id}}" class="">
+                     <div class="btn-item-service">
+                        <div class="btn-logo">
+                           <div class="back-logo">
+                              <img src="storage\{{$item->Foto}}" alt="">
+                           </div>
+                           <h4>{{$listname[$key]->name." ".$item->status}}</h4>
+                        </div>
+                        <img src="/assets/img/right-arrow.png" alt="">
+                     </div>  
+                  </a>
+               </div>
+               @endforeach
+            </div>
+         </div>
    @endif
 
    

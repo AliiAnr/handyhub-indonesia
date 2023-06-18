@@ -69,11 +69,13 @@
         <div class="kelas">
             <div class="col-md-5 border-right">
                 <div class="d-flex flex-column align-items-center text-center p-0 py-0">
-                    @if (auth()->user()->ProfilPic)
-                        <img class="rounded-circle mt-5" width="150px" src="storage\{{ auth()->user()->ProfilPic }}">
-                    @else
-                        <img class="rounded-circle mt-5" width="150px" src="assets\img\defaulprofilpic.jpg">
-                    @endif
+                    <div class="img-user">
+                        @if (auth()->user()->ProfilPic)
+                            <img class="rounded-img" src="storage\{{ auth()->user()->ProfilPic }}">
+                        @else
+                            <img class="rounded-img" src="assets\img\defaulprofilpic.jpg">
+                        @endif
+                    </div>
                     <span class="font-weight-bold">{{ auth()->user()->name }}</span><span
                         class="text-black-50">{{ auth()->user()->email }}</span><span> </span>
                 </div>
@@ -119,23 +121,25 @@
                         <div class="input-group2">
                             <form class="input-profile" action="/profil/update" method="post">
                                 @csrf
-                                <input type="text" class="form-control" name="nama" id="nama"
-                                    placeholder="Nama" aria-label="Nama" aria-describedby="button-addon2">
-                                <input type="text" class="form-control" placeholder="Password" name="password"
+                                <input type="text" class="form-control" name="name" id="nama"
+                                    placeholder="{{$user->name}}" aria-label="Nama" aria-describedby="button-addon2">
+                                <input type="password" class="form-control" placeholder="Password" name="password"
                                     aria-label="Password" aria-describedby="button-addon2">
                                     
-                                <input type="text" class="form-control" id="province" name="alamat" placeholder="Provinsi"
+                                <input type="text" class="form-control" id="province" name="provinsi" placeholder="{{$user->provinsi}}"
                                     aria-label="Alamat" aria-describedby="button-addon2">
                                     
-                                <input type="text" class="form-control" id="city" placeholder="Kota" name="password"
+                                <input type="text" class="form-control" id="city" placeholder="{{$user->Alamat}}" name="Alamat"
                                     aria-label="Password" aria-describedby="button-addon2">
                                     
-                                <input type="text" class="form-control" id="district" placeholder="Kecamatan" name="password"
+                                <input type="text" class="form-control" id="district" placeholder="{{$user->kecamatan}}" name="kecamatan"
                                     aria-label="Password" aria-describedby="button-addon2">
                                     
-                                <input type="text" class="form-control" id="postalCode" placeholder="Kode Pos" name="password"
+                                <input type="text" class="form-control" id="postalCode" placeholder="{{$user->kodepos}}" name="kodepos"
                                     aria-label="Password" aria-describedby="button-addon2">
-                                <input type="text" class="form-control" id="street" placeholder="Nama Jalan" name="password"
+                                <input type="text" class="form-control" id="street" placeholder="{{$user->jalan}}" name="jalan"
+                                    aria-label="Password" aria-describedby="button-addon2">
+                                <input type="text" class="form-control" id="street" placeholder="{{$user->No_Hp}}" name="No_Hp"
                                     aria-label="Password" aria-describedby="button-addon2">
                                     
                                 <button class="btn btn-outline-secondary" type="submit"

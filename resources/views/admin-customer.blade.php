@@ -189,7 +189,7 @@
                                             <td>{{$item->Alamat}}</td>
                                             <td>{{$item->No_Hp}}</td>
                                             <td>{{$item->email}}</td>
-                                            <td><img src="storage\{{$item->ProfilPic}}"></td>
+                                            <td><a href="storage\{{$item->ProfilPic}}">Foto</a></td> 
                                             <td>
                                                 <a href="/customerubah/{{$item->id}}" class="btn btn-primary btn-sm">Ubah</a>
                                                 <a href="/customerdelete/{{$item->id}}" class="btn btn-danger btn-sm">Hapus</a>
