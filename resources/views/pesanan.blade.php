@@ -164,18 +164,18 @@
                      <h3>Menunggu Konfirmasi</h3>
                   </div>
                   @if (Auth::guard('tukang')->check())
-                  <form action="/accpesanan/{{$pesanan->id}}" method="post">
-                  @csrf
-                  <button class="btn-content-confirmation-2">
-                     <span>Terima</span>
-                  </button> 
-                  </form>
+                     <form action="/accpesanan/{{$pesanan->id}}" method="post">
+                        @csrf
+                        <button class="btn-content-confirmation-2">
+                           <span>Terima</span>
+                        </button> 
+                     </form>
                   @else
-                  <form action="/pesananselese/{{$pesanan->id}}" method="post">
-                  @csrf
-                  <button class="btn-content-confirmation-1">
-                     <span>Check Selesai</span>
-                  </button> 
+                     <form action="/pesananselese/{{$pesanan->id}}" method="post">
+                     @csrf
+                     <button class="btn-content-confirmation-1">
+                        <span>Check Selesai</span>
+                     </button> 
                   </form>
                   @endif
                </div>

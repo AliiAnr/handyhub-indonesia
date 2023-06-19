@@ -121,27 +121,73 @@
                         <div class="input-group2">
                             <form class="input-profile" action="/profil/update" method="post">
                                 @csrf
+                                <label for="formFile" class="form-label">Nama :</label>
+                                @if ($user->name === null)
+                                <input type="text" class="form-control" name="name" id="nama"
+                                    placeholder="Nama" aria-label="Nama" aria-describedby="button-addon2">
+                                @else
                                 <input type="text" class="form-control" name="name" id="nama"
                                     placeholder="{{$user->name}}" aria-label="Nama" aria-describedby="button-addon2">
+                                @endif
+
+                                <label for="formFile" class="form-label">Password :</label>
                                 <input type="password" class="form-control" placeholder="Password" name="password"
                                     aria-label="Password" aria-describedby="button-addon2">
-                                    
+
+                                <label for="formFile" class="form-label">Provinsi :</label>
+                                @if ($user->provinsi === null)
+                                <input type="text" class="form-control" id="province" name="provinsi" placeholder="Provinsi"
+                                    aria-label="Alamat" aria-describedby="button-addon2">
+                                @else
                                 <input type="text" class="form-control" id="province" name="provinsi" placeholder="{{$user->provinsi}}"
                                     aria-label="Alamat" aria-describedby="button-addon2">
-                                    
+                                @endif 
+                                
+                                <label for="formFile" class="form-label">Kota/Kabupaten :</label>
+                                @if ($user->Alamat === null)
+                                <input type="text" class="form-control" id="city" placeholder="Kota/Kabupaten" name="Alamat"
+                                    aria-label="Password" aria-describedby="button-addon2">
+                                @else
                                 <input type="text" class="form-control" id="city" placeholder="{{$user->Alamat}}" name="Alamat"
                                     aria-label="Password" aria-describedby="button-addon2">
-                                    
+                                @endif  
+
+                                <label for="formFile" class="form-label">Kecamatan :</label>
+                                @if ($user->kecamatan === null)
+                                <input type="text" class="form-control" id="district" placeholder="Kecamatan" name="kecamatan"
+                                    aria-label="Password" aria-describedby="button-addon2">
+                                @else
                                 <input type="text" class="form-control" id="district" placeholder="{{$user->kecamatan}}" name="kecamatan"
                                     aria-label="Password" aria-describedby="button-addon2">
-                                    
+                                @endif     
+
+                                <label for="formFile" class="form-label">Kode Pos :</label>
+                                @if ($user->kodepos === null)
+                                <input type="text" class="form-control" id="postalCode" placeholder="Kode Pos" name="kodepos"
+                                    aria-label="Password" aria-describedby="button-addon2">
+                                @else
                                 <input type="text" class="form-control" id="postalCode" placeholder="{{$user->kodepos}}" name="kodepos"
                                     aria-label="Password" aria-describedby="button-addon2">
+                                @endif      
+
+                                <label for="formFile" class="form-label">Jalan :</label>
+                                @if ($user->jalan === null)
+                                <input type="text" class="form-control" id="street" placeholder="Jalan" name="jalan"
+                                    aria-label="Password" aria-describedby="button-addon2">
+                                @else
                                 <input type="text" class="form-control" id="street" placeholder="{{$user->jalan}}" name="jalan"
                                     aria-label="Password" aria-describedby="button-addon2">
+                                @endif  
+
+                                <label for="formFile" class="form-label">No HP :</label>
+                                @if ($user->No_Hp === null)
+                                <input type="text" class="form-control" id="street" placeholder="No HP" name="No_Hp"
+                                    aria-label="Password" aria-describedby="button-addon2">
+                                @else
                                 <input type="text" class="form-control" id="street" placeholder="{{$user->No_Hp}}" name="No_Hp"
                                     aria-label="Password" aria-describedby="button-addon2">
-                                    
+                                @endif  
+
                                 <button class="btn btn-outline-secondary" type="submit"
                                     id="button-addon2">Simpan</button>
                             </form>

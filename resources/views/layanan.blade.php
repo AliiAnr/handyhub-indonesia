@@ -14,7 +14,7 @@
             <div class="pic-logo-handyhub">
                <div class="logo">
                   <a href="/">
-                     <img src="assets/img/start-renovation.png" alt="logo">
+                     <img src="/assets/img/start-renovation.png" alt="logo">
                   </a>
                </div>
                <h1 class="text-logo">HandyHub</h1>

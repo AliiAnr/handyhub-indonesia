@@ -6,7 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\pengguna;
 use App\Models\kategori;
-use App\Models\pesanan;
+use App\Models\admin;
 use App\Models\tukang;
 use Illuminate\Database\Seeder;
 
@@ -22,6 +22,11 @@ class DatabaseSeeder extends Seeder
             'name'=>'fahir',
             'No_Hp'=>'081123456790',
             'email'=>'popemilus@gmail.com',
+            'password'=>bcrypt('asdasd')
+        ]);
+        admin::create([
+            'name'=>'uhiradmin',
+            'email'=>'fahir@gmail.com',
             'password'=>bcrypt('asdasd')
         ]);
         tukang::create([

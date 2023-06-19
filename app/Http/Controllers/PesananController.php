@@ -49,7 +49,9 @@ class PesananController extends Controller
     }
     
     public function accpesanan($id_pesan){
+
         $tukang = tukang::find(auth()->user()->id);
+
         pesanan::where('id', $id_pesan)->update([
             'status' =>'Konfirmasi Diterima',
             'id_tukang' => $tukang->id,
@@ -58,14 +60,17 @@ class PesananController extends Controller
     }
 
     public function selese($id_pesan){
+
         pesanan::where('id', $id_pesan)->update([
             'status' =>'Sudah Selesai',
         ]);
+
         $pesanan = pesanan::find($id_pesan);
         $end = $pesanan->updated_at;
         pesanan::where('id', $id_pesan)->update([
             'waktu_end' => $end,
         ]);
+        
         if(Auth::guard('tukang')->check()){
             return redirect('/riwayatukang');
         }else{

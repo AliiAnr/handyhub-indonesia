@@ -59,8 +59,13 @@ class profilcontroller extends Controller
         if ($validatedData['password'] !== null) {
             $validatedData['password'] = bcrypt($validatedData['password']);
         }
-        $pengguna = pengguna::find(auth()->user()->id);
-        $pengguna->update(array_filter($validatedData));
+        if (Auth::guard('tukang')->check()){
+            $ison = tukang::find(auth()->user()->id);
+        }else{
+            $ison = pengguna::find(auth()->user()->id);
+        }
+        // $pengguna = pengguna::find(auth()->user()->id);
+        $ison->update(array_filter($validatedData));
         return redirect('/profil');
     }
 }
